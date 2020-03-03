@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  MyFiles
+//
+//  Created by 김학철 on 2020/01/22.
+//  Copyright © 2020 김학철. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define RGB(r, g, b)[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBA(r, g, b, a)[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+
+#define ShowTutorial @"ShowTutorial"
+#define SelectedRootId @"SelectedRootId"
+#define RootIdHome @"home"
+#define RootIdiCloud @"iCloude"
+#define RootIdGoogle @"googleDrive"
+#define RootIdiDropBox @"dropBox"
+#define RootIdiOneDrive @"oneDrive"
+
+
+#define UserCountryCode [[NSUserDefaults standardUserDefaults] objectForKey:@"USER_COUNTRY_CODE"]
+#define UserLanguageCode [[NSUserDefaults standardUserDefaults] objectForKey:@"LANGUAGE_CODE"]
+#define UserLanguageTblName [[NSUserDefaults standardUserDefaults] objectForKey:@"LANGUAGE_TBL_NAME"]
+#define UserLocalIdentifier [[NSUserDefaults standardUserDefaults] objectForKey:@"LOCAL_IDENTIFIER"]
+
+#endif /* PrefixHeader_pch */

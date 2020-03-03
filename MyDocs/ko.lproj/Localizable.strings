@@ -1,0 +1,10 @@
+"local" = "로컬";
+"cloud_service" = "클라우드 서비스";
+"home" = "홈";
+"trash" = "휴지통";
+"icloud" = "iCloud";
+"dropbox" = "DropBox";
+"google_drive" = "GoogleDrive";
+"one_drive" = "OneDrive";
+"setting" = "설정";
+"language" = "언어";

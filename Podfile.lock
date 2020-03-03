@@ -1,0 +1,16 @@
+PODS:
+  - LGSideMenuController (2.1.1)
+
+DEPENDENCIES:
+  - LGSideMenuController
+
+SPEC REPOS:
+  trunk:
+    - LGSideMenuController
+
+SPEC CHECKSUMS:
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+
+PODFILE CHECKSUM: 6d787d66a6a637a318ca440053d2165087c4016c
+
+COCOAPODS: 1.8.4
