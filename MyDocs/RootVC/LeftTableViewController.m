@@ -8,7 +8,7 @@
 
 #import "LeftTableViewController.h"
 #import "MainViewController.h"
-#import "SceneDelegate.h"
+#import "AppDelegate.h"
 #import "LanguageViewController.h"
 
 @interface LeftTableViewController ()
@@ -125,7 +125,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:rootId forKey:SelectedRootId];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            RootNavigationController *rootNaviVc = [SceneDelegate instance].rootNavigationController;
+            RootNavigationController *rootNaviVc = [AppDelegate instance].rootNavigationController;
             [rootNaviVc changeRootViewController];
             [self.tableView reloadData];
         }
@@ -135,7 +135,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:rootId forKey:SelectedRootId];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        RootNavigationController *rootNaviVc = [SceneDelegate instance].rootNavigationController;
+        RootNavigationController *rootNaviVc = [AppDelegate instance].rootNavigationController;
         [rootNaviVc changeRootViewController];
         [self.tableView reloadData];
         
@@ -143,7 +143,7 @@
     else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             LanguageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LanguageViewController"];
-            [[SceneDelegate instance].rootNavigationController pushViewController:vc animated:YES];
+            [[AppDelegate instance].rootNavigationController pushViewController:vc animated:YES];
         }
     }
 }

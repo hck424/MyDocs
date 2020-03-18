@@ -21,6 +21,7 @@
 #define RootIdiDropBox @"dropBox"
 #define RootIdiOneDrive @"oneDrive"
 
+#define NotiNameHitTestView @"NotiNameHitTestView"
 
 #define UserCountryCode [[NSUserDefaults standardUserDefaults] objectForKey:@"USER_COUNTRY_CODE"]
 #define UserLanguageCode [[NSUserDefaults standardUserDefaults] objectForKey:@"LANGUAGE_CODE"]

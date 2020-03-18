@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RootNavigationController.h"
 
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
-
 @property (strong, nonatomic) UIWindow * window;
-
 + (SceneDelegate *)instance;
-- (RootNavigationController *)rootNavigationController;
-- (void)callMainViewController;
 @end
 

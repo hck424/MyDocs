@@ -24,13 +24,14 @@
     [super viewDidLoad];
     self.delegate = self;
     
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    
     [self changeRootViewController];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
-
 - (void)changeRootViewController {
     NSString *selRootId = [[NSUserDefaults standardUserDefaults] objectForKey:SelectedRootId];
     

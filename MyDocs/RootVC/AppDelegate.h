@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootNavigationController.h"
+#import "NSBundle+Language.h"
+#import "MainViewController.h"
+#import "TutorialViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-
+@property (strong, nonatomic) UIWindow * window;
++ (AppDelegate *)instance;
+- (RootNavigationController *)rootNavigationController;
+- (void)callTutorialViewController;
+- (void)callMainViewController;
 @end
 

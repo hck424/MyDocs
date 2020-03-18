@@ -7,7 +7,7 @@
 //
 
 #import "TutorialViewController.h"
-#import "SceneDelegate.h"
+#import "AppDelegate.h"
 
 @interface TutorialViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -60,7 +60,7 @@
         || sender == _btnStart) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:ShowTutorial];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [[SceneDelegate instance] callMainViewController];
+        [[AppDelegate instance] callMainViewController];
     }
     else if (sender == _btnNext) {
         self.curPageIdx = self.curPageIdx + 1;

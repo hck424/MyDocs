@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B9D66CDEAB9781AC23892EE6 /* Pods_MyDocs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */; };
+		E9BD1FAF2421D96A00AC2A51 /* CToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */; };
+		E9BD1FB12421D97400AC2A51 /* CToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1FB02421D97400AC2A51 /* CToolBar.xib */; };
+		E9BD1FB42422068800AC2A51 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD1FB22422068800AC2A51 /* VerticalButton.m */; };
 		E9D90B70240E2F77006AAAF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90B6F240E2F77006AAAF2 /* AppDelegate.m */; };
 		E9D90B73240E2F77006AAAF2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90B72240E2F77006AAAF2 /* SceneDelegate.m */; };
 		E9D90B76240E2F77006AAAF2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90B75240E2F77006AAAF2 /* MainViewController.m */; };
@@ -34,12 +37,23 @@
 		E9D90BD1240E3A6E006AAAF2 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BBF240E37AD006AAAF2 /* BaseViewController.m */; };
 		E9D90BD4240E49DF006AAAF2 /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD3240E49DF006AAAF2 /* UIImage+Utility.m */; };
 		E9D90BD7240E4B02006AAAF2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD6240E4B02006AAAF2 /* Utility.m */; };
+		E9D90BDA240E56B6006AAAF2 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD9240E56B6006AAAF2 /* HitTestView.m */; };
+		E9FCF46A240F313800C0A385 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF469240F313800C0A385 /* SearchBar.m */; };
+		E9FCF46C240F314F00C0A385 /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FCF46B240F314F00C0A385 /* SearchBar.xib */; };
+		E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF46E240F362A00C0A385 /* UIView+Utility.m */; };
+		E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */; };
+		E9FCF47A240F4BA500C0A385 /* PathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF479240F4BA500C0A385 /* PathViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F06331DC39D7CE20940AC0F /* Pods-MyDocs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.debug.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.debug.xcconfig"; sourceTree = "<group>"; };
 		4F82F86D583B4EA1FA11AC8B /* Pods-MyDocs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.release.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.release.xcconfig"; sourceTree = "<group>"; };
 		8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDocs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9BD1FAD2421D96A00AC2A51 /* CToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CToolBar.h; sourceTree = "<group>"; };
+		E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CToolBar.m; sourceTree = "<group>"; };
+		E9BD1FB02421D97400AC2A51 /* CToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CToolBar.xib; sourceTree = "<group>"; };
+		E9BD1FB22422068800AC2A51 /* VerticalButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalButton.m; sourceTree = "<group>"; };
+		E9BD1FB32422068800AC2A51 /* VerticalButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalButton.h; sourceTree = "<group>"; };
 		E9D90B6B240E2F77006AAAF2 /* MyDocs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDocs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D90B6E240E2F77006AAAF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9D90B6F240E2F77006AAAF2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +107,17 @@
 		E9D90BD3240E49DF006AAAF2 /* UIImage+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
 		E9D90BD5240E4B02006AAAF2 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		E9D90BD6240E4B02006AAAF2 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		E9D90BD8240E56B6006AAAF2 /* HitTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestView.h; sourceTree = "<group>"; };
+		E9D90BD9240E56B6006AAAF2 /* HitTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestView.m; sourceTree = "<group>"; };
+		E9FCF468240F313800C0A385 /* SearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
+		E9FCF469240F313800C0A385 /* SearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
+		E9FCF46B240F314F00C0A385 /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
+		E9FCF46D240F362A00C0A385 /* UIView+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
+		E9FCF46E240F362A00C0A385 /* UIView+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
+		E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBarButtonItem.h; sourceTree = "<group>"; };
+		E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBarButtonItem.m; sourceTree = "<group>"; };
+		E9FCF478240F4BA500C0A385 /* PathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathViewController.h; sourceTree = "<group>"; };
+		E9FCF479240F4BA500C0A385 /* PathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +163,8 @@
 			children = (
 				E9D90B77240E2F77006AAAF2 /* Main.storyboard */,
 				E9D90B7A240E2F77006AAAF2 /* Assets.xcassets */,
+				E9D90BBE240E37AD006AAAF2 /* BaseViewController.h */,
+				E9D90BBF240E37AD006AAAF2 /* BaseViewController.m */,
 				E9D90BBD240E37A0006AAAF2 /* Common */,
 				E9D90BB3240E3625006AAAF2 /* DropBox */,
 				E9D90BA7240E3625006AAAF2 /* Google */,
@@ -154,6 +181,8 @@
 				E9D90B8D240E2FD0006AAAF2 /* InfoPlist.strings */,
 				E9D90B7C240E2F77006AAAF2 /* LaunchScreen.storyboard */,
 				E9D90B93240E307E006AAAF2 /* Localizable.strings */,
+				E9FCF478240F4BA500C0A385 /* PathViewController.h */,
+				E9FCF479240F4BA500C0A385 /* PathViewController.m */,
 			);
 			path = MyDocs;
 			sourceTree = "<group>";
@@ -169,6 +198,8 @@
 				E9D90BD3240E49DF006AAAF2 /* UIImage+Utility.m */,
 				E9D90BD5240E4B02006AAAF2 /* Utility.h */,
 				E9D90BD6240E4B02006AAAF2 /* Utility.m */,
+				E9FCF46D240F362A00C0A385 /* UIView+Utility.h */,
+				E9FCF46E240F362A00C0A385 /* UIView+Utility.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -260,10 +291,20 @@
 		E9D90BBD240E37A0006AAAF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E9D90BBE240E37AD006AAAF2 /* BaseViewController.h */,
-				E9D90BBF240E37AD006AAAF2 /* BaseViewController.m */,
+				E9BD1FB32422068800AC2A51 /* VerticalButton.h */,
+				E9BD1FB22422068800AC2A51 /* VerticalButton.m */,
 				E9D90BC5240E388F006AAAF2 /* CTextField.h */,
 				E9D90BC4240E388F006AAAF2 /* CTextField.m */,
+				E9D90BD8240E56B6006AAAF2 /* HitTestView.h */,
+				E9D90BD9240E56B6006AAAF2 /* HitTestView.m */,
+				E9FCF468240F313800C0A385 /* SearchBar.h */,
+				E9FCF469240F313800C0A385 /* SearchBar.m */,
+				E9FCF46B240F314F00C0A385 /* SearchBar.xib */,
+				E9BD1FAD2421D96A00AC2A51 /* CToolBar.h */,
+				E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */,
+				E9BD1FB02421D97400AC2A51 /* CToolBar.xib */,
+				E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */,
+				E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -337,11 +378,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9BD1FB12421D97400AC2A51 /* CToolBar.xib in Resources */,
 				E9D90B7E240E2F77006AAAF2 /* LaunchScreen.storyboard in Resources */,
 				E9D90B8B240E2FD0006AAAF2 /* InfoPlist.strings in Resources */,
 				E9D90B91240E307E006AAAF2 /* Localizable.strings in Resources */,
 				E9D90B7B240E2F77006AAAF2 /* Assets.xcassets in Resources */,
 				E9D90B79240E2F77006AAAF2 /* Main.storyboard in Resources */,
+				E9FCF46C240F314F00C0A385 /* SearchBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,13 +439,18 @@
 			files = (
 				E9D90B76240E2F77006AAAF2 /* MainViewController.m in Sources */,
 				E9D90BD1240E3A6E006AAAF2 /* BaseViewController.m in Sources */,
+				E9BD1FAF2421D96A00AC2A51 /* CToolBar.m in Sources */,
+				E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */,
 				E9D90BC9240E39A9006AAAF2 /* UIViewController+Utility.m in Sources */,
 				E9D90BCF240E39E8006AAAF2 /* GoogleDriveViewController.m in Sources */,
 				E9D90BD7240E4B02006AAAF2 /* Utility.m in Sources */,
 				E9D90BC6240E388F006AAAF2 /* CTextField.m in Sources */,
+				E9D90BDA240E56B6006AAAF2 /* HitTestView.m in Sources */,
 				E9D90B70240E2F77006AAAF2 /* AppDelegate.m in Sources */,
 				E9D90B81240E2F77006AAAF2 /* main.m in Sources */,
 				E9D90B73240E2F77006AAAF2 /* SceneDelegate.m in Sources */,
+				E9FCF46A240F313800C0A385 /* SearchBar.m in Sources */,
+				E9BD1FB42422068800AC2A51 /* VerticalButton.m in Sources */,
 				E9D90BCE240E39DF006AAAF2 /* DropBoxViewController.m in Sources */,
 				E9D90BCD240E39CE006AAAF2 /* LanguageViewController.m in Sources */,
 				E9D90BCB240E39BC006AAAF2 /* OneDriveViewController.m in Sources */,
@@ -410,7 +458,9 @@
 				E9D90BD4240E49DF006AAAF2 /* UIImage+Utility.m in Sources */,
 				E9D90BA3240E35A2006AAAF2 /* RightTableViewController.m in Sources */,
 				E9D90BA6240E35D1006AAAF2 /* RootNavigationController.m in Sources */,
+				E9FCF47A240F4BA500C0A385 /* PathViewController.m in Sources */,
 				E9D90BA2240E35A2006AAAF2 /* LeftTableViewController.m in Sources */,
+				E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */,
 				E9D90B97240E3101006AAAF2 /* TutorialViewController.m in Sources */,
 				E9D90BCC240E39CB006AAAF2 /* LanguageInfo.m in Sources */,
 				E9D90BC8240E399B006AAAF2 /* NSBundle+Language.m in Sources */,
@@ -511,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -564,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
