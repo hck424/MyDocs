@@ -1,16 +1,58 @@
 PODS:
+  - FCFileManager (1.0.20)
+  - KafkaRefresh (1.4.7):
+    - KafkaRefresh/Category (= 1.4.7)
+    - KafkaRefresh/Configuration (= 1.4.7)
+    - KafkaRefresh/Core (= 1.4.7)
+    - KafkaRefresh/Default (= 1.4.7)
+    - KafkaRefresh/Style (= 1.4.7)
+    - KafkaRefresh/UIKit (= 1.4.7)
+  - KafkaRefresh/Category (1.4.7)
+  - KafkaRefresh/Configuration (1.4.7):
+    - KafkaRefresh/UIKit/FootKit
+    - KafkaRefresh/UIKit/HeadKit
+  - KafkaRefresh/Core (1.4.7):
+    - KafkaRefresh/Category
+  - KafkaRefresh/Default (1.4.7):
+    - KafkaRefresh/Style
+  - KafkaRefresh/Style (1.4.7)
+  - KafkaRefresh/UIKit (1.4.7):
+    - KafkaRefresh/UIKit/FootKit (= 1.4.7)
+    - KafkaRefresh/UIKit/HeadKit (= 1.4.7)
+    - KafkaRefresh/UIKit/LayerKit (= 1.4.7)
+  - KafkaRefresh/UIKit/FootKit (1.4.7):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/HeadKit (1.4.7):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/LayerKit (1.4.7):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Default
   - LGSideMenuController (2.1.1)
 
 DEPENDENCIES:
+  - FCFileManager
+  - KafkaRefresh
   - LGSideMenuController
 
 SPEC REPOS:
   trunk:
+    - FCFileManager
+    - KafkaRefresh
     - LGSideMenuController
 
 SPEC CHECKSUMS:
+  FCFileManager: e0f73316e6aa2eb04d2ff4caa75fe7df1ae44270
+  KafkaRefresh: a7962ea8f03f384c1b545d8c27ac419aa0d5b055
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
 
-PODFILE CHECKSUM: 6d787d66a6a637a318ca440053d2165087c4016c
+PODFILE CHECKSUM: fb4504e87cfb1189920f62c4a0c967618ab21590
 
 COCOAPODS: 1.8.4

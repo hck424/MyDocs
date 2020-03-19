@@ -27,5 +27,7 @@
 #define UserLanguageCode [[NSUserDefaults standardUserDefaults] objectForKey:@"LANGUAGE_CODE"]
 #define UserLanguageTblName [[NSUserDefaults standardUserDefaults] objectForKey:@"LANGUAGE_TBL_NAME"]
 #define UserLocalIdentifier [[NSUserDefaults standardUserDefaults] objectForKey:@"LOCAL_IDENTIFIER"]
+#define COLOR_APP_DEFAULT RGB(28, 71, 178)
+
 
 #endif /* PrefixHeader_pch */

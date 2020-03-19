@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LGSideMenuController"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FCFileManager" "${PODS_CONFIGURATION_BUILD_DIR}/KafkaRefresh" "${PODS_CONFIGURATION_BUILD_DIR}/LGSideMenuController"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LGSideMenuController/LGSideMenuController.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FCFileManager/FCFileManager.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KafkaRefresh/KafkaRefresh.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LGSideMenuController/LGSideMenuController.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "LGSideMenuController"
+OTHER_LDFLAGS = $(inherited) -framework "FCFileManager" -framework "Foundation" -framework "ImageIO" -framework "KafkaRefresh" -framework "LGSideMenuController" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

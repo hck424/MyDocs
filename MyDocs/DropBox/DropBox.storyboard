@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcK-y3-G7u">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drop Box View Controller-->
+        <scene sceneID="jNa-2x-6pe">
+            <objects>
+                <viewController storyboardIdentifier="DropBoxViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gcK-y3-G7u" customClass="DropBoxViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3VJ-t5-Nap">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-mn-xZ1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcN-Uk-FIt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eWb-sj-jcV"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhn-HW-hpQ">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="768"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oHR-jq-EdM" firstAttribute="bottom" secondItem="SLT-mn-xZ1" secondAttribute="bottom" id="0M3-cy-XOt"/>
+                            <constraint firstItem="SLT-mn-xZ1" firstAttribute="top" secondItem="oHR-jq-EdM" secondAttribute="top" id="65P-qr-FGm"/>
+                            <constraint firstItem="oHR-jq-EdM" firstAttribute="trailing" secondItem="SLT-mn-xZ1" secondAttribute="trailing" id="j4v-1h-fiA"/>
+                            <constraint firstItem="SLT-mn-xZ1" firstAttribute="leading" secondItem="oHR-jq-EdM" secondAttribute="leading" id="qpm-0S-GHs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oHR-jq-EdM"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="6eK-wa-OuX">
+                            <color key="tintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                        <barButtonItem title="Item" id="Uvu-b4-88R"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="bHa-EZ-qEu"/>
+                        <barButtonItem title="Item" id="kE4-3w-Djm"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="iUb-t5-ZkN"/>
+                        <barButtonItem title="Item" id="FGJ-6b-UJ4"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="670-m2-tz5"/>
+                    </toolbarItems>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjk-UV-g2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197" y="757"/>
+        </scene>
+    </scenes>
+</document>

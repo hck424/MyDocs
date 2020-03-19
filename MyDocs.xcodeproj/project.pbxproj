@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B9D66CDEAB9781AC23892EE6 /* Pods_MyDocs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */; };
+		E96C10BD242370F400817620 /* FileNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C10BC242370F400817620 /* FileNavigationController.m */; };
+		E96E4547242300EC0092256B /* FileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4545242300EC0092256B /* FileCell.m */; };
+		E96E4548242300EC0092256B /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E4546242300EC0092256B /* FileCell.xib */; };
+		E96E454B242310350092256B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E454A242310350092256B /* Home.storyboard */; };
+		E96E454D2423106A0092256B /* iCloud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E454C2423106A0092256B /* iCloud.storyboard */; };
+		E96E454F242310900092256B /* OneDrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E454E242310900092256B /* OneDrive.storyboard */; };
+		E96E4551242310AD0092256B /* DropBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E4550242310AD0092256B /* DropBox.storyboard */; };
+		E96E4553242310C80092256B /* GoogleDrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E4552242310C80092256B /* GoogleDrive.storyboard */; };
+		E96E4555242314750092256B /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E4554242314750092256B /* Other.storyboard */; };
+		E96E4558242314980092256B /* FileListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4557242314980092256B /* FileListController.m */; };
+		E96E4562242348D80092256B /* FileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4560242348D80092256B /* FileCollectionCell.m */; };
+		E96E4563242348D80092256B /* FileCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E4561242348D80092256B /* FileCollectionCell.xib */; };
+		E96E4566242353B20092256B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4565242353B20092256B /* RootViewController.m */; };
 		E9BD1FAF2421D96A00AC2A51 /* CToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */; };
 		E9BD1FB12421D97400AC2A51 /* CToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1FB02421D97400AC2A51 /* CToolBar.xib */; };
 		E9BD1FB42422068800AC2A51 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD1FB22422068800AC2A51 /* VerticalButton.m */; };
@@ -38,17 +51,38 @@
 		E9D90BD4240E49DF006AAAF2 /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD3240E49DF006AAAF2 /* UIImage+Utility.m */; };
 		E9D90BD7240E4B02006AAAF2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD6240E4B02006AAAF2 /* Utility.m */; };
 		E9D90BDA240E56B6006AAAF2 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD9240E56B6006AAAF2 /* HitTestView.m */; };
+		E9F5ECF2242365590093B878 /* ToolBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5ECF1242365590093B878 /* ToolBarViewController.m */; };
+		E9F5ECF5242365660093B878 /* AdViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5ECF4242365660093B878 /* AdViewViewController.m */; };
 		E9FCF46A240F313800C0A385 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF469240F313800C0A385 /* SearchBar.m */; };
 		E9FCF46C240F314F00C0A385 /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FCF46B240F314F00C0A385 /* SearchBar.xib */; };
 		E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF46E240F362A00C0A385 /* UIView+Utility.m */; };
 		E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */; };
-		E9FCF47A240F4BA500C0A385 /* PathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF479240F4BA500C0A385 /* PathViewController.m */; };
+		E9FCF47A240F4BA500C0A385 /* FilePathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF479240F4BA500C0A385 /* FilePathViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F06331DC39D7CE20940AC0F /* Pods-MyDocs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.debug.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.debug.xcconfig"; sourceTree = "<group>"; };
 		4F82F86D583B4EA1FA11AC8B /* Pods-MyDocs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.release.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.release.xcconfig"; sourceTree = "<group>"; };
 		8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDocs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96C10BB242370F400817620 /* FileNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileNavigationController.h; sourceTree = "<group>"; };
+		E96C10BC242370F400817620 /* FileNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileNavigationController.m; sourceTree = "<group>"; };
+		E96E4544242300EC0092256B /* FileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileCell.h; sourceTree = "<group>"; };
+		E96E4545242300EC0092256B /* FileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileCell.m; sourceTree = "<group>"; };
+		E96E4546242300EC0092256B /* FileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCell.xib; sourceTree = "<group>"; };
+		E96E454A242310350092256B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E96E454C2423106A0092256B /* iCloud.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iCloud.storyboard; sourceTree = "<group>"; };
+		E96E454E242310900092256B /* OneDrive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OneDrive.storyboard; sourceTree = "<group>"; };
+		E96E4550242310AD0092256B /* DropBox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropBox.storyboard; sourceTree = "<group>"; };
+		E96E4552242310C80092256B /* GoogleDrive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleDrive.storyboard; sourceTree = "<group>"; };
+		E96E4554242314750092256B /* Other.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
+		E96E4556242314980092256B /* FileListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileListController.h; sourceTree = "<group>"; };
+		E96E4557242314980092256B /* FileListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileListController.m; sourceTree = "<group>"; };
+		E96E455E242340AD0092256B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E96E455F242348D80092256B /* FileCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileCollectionCell.h; sourceTree = "<group>"; };
+		E96E4560242348D80092256B /* FileCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileCollectionCell.m; sourceTree = "<group>"; };
+		E96E4561242348D80092256B /* FileCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCollectionCell.xib; sourceTree = "<group>"; };
+		E96E4564242353B20092256B /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E96E4565242353B20092256B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E9BD1FAD2421D96A00AC2A51 /* CToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CToolBar.h; sourceTree = "<group>"; };
 		E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CToolBar.m; sourceTree = "<group>"; };
 		E9BD1FB02421D97400AC2A51 /* CToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CToolBar.xib; sourceTree = "<group>"; };
@@ -109,6 +143,10 @@
 		E9D90BD6240E4B02006AAAF2 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		E9D90BD8240E56B6006AAAF2 /* HitTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestView.h; sourceTree = "<group>"; };
 		E9D90BD9240E56B6006AAAF2 /* HitTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestView.m; sourceTree = "<group>"; };
+		E9F5ECF0242365590093B878 /* ToolBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolBarViewController.h; sourceTree = "<group>"; };
+		E9F5ECF1242365590093B878 /* ToolBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolBarViewController.m; sourceTree = "<group>"; };
+		E9F5ECF3242365660093B878 /* AdViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdViewViewController.h; sourceTree = "<group>"; };
+		E9F5ECF4242365660093B878 /* AdViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdViewViewController.m; sourceTree = "<group>"; };
 		E9FCF468240F313800C0A385 /* SearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
 		E9FCF469240F313800C0A385 /* SearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
 		E9FCF46B240F314F00C0A385 /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
@@ -116,8 +154,8 @@
 		E9FCF46E240F362A00C0A385 /* UIView+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
 		E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBarButtonItem.h; sourceTree = "<group>"; };
 		E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBarButtonItem.m; sourceTree = "<group>"; };
-		E9FCF478240F4BA500C0A385 /* PathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathViewController.h; sourceTree = "<group>"; };
-		E9FCF479240F4BA500C0A385 /* PathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathViewController.m; sourceTree = "<group>"; };
+		E9FCF478240F4BA500C0A385 /* FilePathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilePathViewController.h; sourceTree = "<group>"; };
+		E9FCF479240F4BA500C0A385 /* FilePathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilePathViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +176,19 @@
 				8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E96E4549242300F40092256B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E96E4544242300EC0092256B /* FileCell.h */,
+				E96E4545242300EC0092256B /* FileCell.m */,
+				E96E4546242300EC0092256B /* FileCell.xib */,
+				E96E455F242348D80092256B /* FileCollectionCell.h */,
+				E96E4560242348D80092256B /* FileCollectionCell.m */,
+				E96E4561242348D80092256B /* FileCollectionCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E9D90B62240E2F77006AAAF2 = {
@@ -165,13 +216,13 @@
 				E9D90B7A240E2F77006AAAF2 /* Assets.xcassets */,
 				E9D90BBE240E37AD006AAAF2 /* BaseViewController.h */,
 				E9D90BBF240E37AD006AAAF2 /* BaseViewController.m */,
-				E9D90BBD240E37A0006AAAF2 /* Common */,
+				E9D90BBD240E37A0006AAAF2 /* CustomView */,
 				E9D90BB3240E3625006AAAF2 /* DropBox */,
 				E9D90BA7240E3625006AAAF2 /* Google */,
 				E9D90BAD240E3625006AAAF2 /* Home */,
 				E9D90BB0240E3625006AAAF2 /* iCloud */,
 				E9D90BAA240E3625006AAAF2 /* OneDrive */,
-				E9D90B9C240E3572006AAAF2 /* RootVC */,
+				E9D90B9C240E3572006AAAF2 /* MainVC */,
 				E9D90BB8240E3719006AAAF2 /* Setting */,
 				E9D90B9D240E3583006AAAF2 /* Tutorial */,
 				E9D90B99240E339C006AAAF2 /* Utils */,
@@ -181,8 +232,12 @@
 				E9D90B8D240E2FD0006AAAF2 /* InfoPlist.strings */,
 				E9D90B7C240E2F77006AAAF2 /* LaunchScreen.storyboard */,
 				E9D90B93240E307E006AAAF2 /* Localizable.strings */,
-				E9FCF478240F4BA500C0A385 /* PathViewController.h */,
-				E9FCF479240F4BA500C0A385 /* PathViewController.m */,
+				E9FCF478240F4BA500C0A385 /* FilePathViewController.h */,
+				E9FCF479240F4BA500C0A385 /* FilePathViewController.m */,
+				E96E4549242300F40092256B /* Views */,
+				E96E4554242314750092256B /* Other.storyboard */,
+				E96E4556242314980092256B /* FileListController.h */,
+				E96E4557242314980092256B /* FileListController.m */,
 			);
 			path = MyDocs;
 			sourceTree = "<group>";
@@ -200,27 +255,36 @@
 				E9D90BD6240E4B02006AAAF2 /* Utility.m */,
 				E9FCF46D240F362A00C0A385 /* UIView+Utility.h */,
 				E9FCF46E240F362A00C0A385 /* UIView+Utility.m */,
+				E96E455E242340AD0092256B /* Constants.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		E9D90B9C240E3572006AAAF2 /* RootVC */ = {
+		E9D90B9C240E3572006AAAF2 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
+				E9F5ECF3242365660093B878 /* AdViewViewController.h */,
+				E9F5ECF4242365660093B878 /* AdViewViewController.m */,
 				E9D90B6E240E2F77006AAAF2 /* AppDelegate.h */,
 				E9D90B6F240E2F77006AAAF2 /* AppDelegate.m */,
-				E9D90B71240E2F77006AAAF2 /* SceneDelegate.h */,
-				E9D90B72240E2F77006AAAF2 /* SceneDelegate.m */,
-				E9D90B74240E2F77006AAAF2 /* MainViewController.h */,
-				E9D90B75240E2F77006AAAF2 /* MainViewController.m */,
 				E9D90BA1240E35A2006AAAF2 /* LeftTableViewController.h */,
 				E9D90B9F240E35A2006AAAF2 /* LeftTableViewController.m */,
+				E9D90B74240E2F77006AAAF2 /* MainViewController.h */,
+				E9D90B75240E2F77006AAAF2 /* MainViewController.m */,
 				E9D90BA0240E35A2006AAAF2 /* RightTableViewController.h */,
 				E9D90B9E240E35A2006AAAF2 /* RightTableViewController.m */,
 				E9D90BA4240E35D1006AAAF2 /* RootNavigationController.h */,
 				E9D90BA5240E35D1006AAAF2 /* RootNavigationController.m */,
+				E96E4564242353B20092256B /* RootViewController.h */,
+				E96E4565242353B20092256B /* RootViewController.m */,
+				E9D90B71240E2F77006AAAF2 /* SceneDelegate.h */,
+				E9D90B72240E2F77006AAAF2 /* SceneDelegate.m */,
+				E9F5ECF0242365590093B878 /* ToolBarViewController.h */,
+				E9F5ECF1242365590093B878 /* ToolBarViewController.m */,
+				E96C10BB242370F400817620 /* FileNavigationController.h */,
+				E96C10BC242370F400817620 /* FileNavigationController.m */,
 			);
-			path = RootVC;
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 		E9D90B9D240E3583006AAAF2 /* Tutorial */ = {
@@ -237,6 +301,7 @@
 			children = (
 				E9D90BA9240E3625006AAAF2 /* GoogleDriveViewController.h */,
 				E9D90BA8240E3625006AAAF2 /* GoogleDriveViewController.m */,
+				E96E4552242310C80092256B /* GoogleDrive.storyboard */,
 			);
 			path = Google;
 			sourceTree = "<group>";
@@ -246,6 +311,7 @@
 			children = (
 				E9D90BAC240E3625006AAAF2 /* OneDriveViewController.h */,
 				E9D90BAB240E3625006AAAF2 /* OneDriveViewController.m */,
+				E96E454E242310900092256B /* OneDrive.storyboard */,
 			);
 			path = OneDrive;
 			sourceTree = "<group>";
@@ -255,6 +321,7 @@
 			children = (
 				E9D90BAF240E3625006AAAF2 /* HomeViewController.h */,
 				E9D90BAE240E3625006AAAF2 /* HomeViewController.m */,
+				E96E454A242310350092256B /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -264,6 +331,7 @@
 			children = (
 				E9D90BB2240E3625006AAAF2 /* iCloudViewController.h */,
 				E9D90BB1240E3625006AAAF2 /* iCloudViewController.m */,
+				E96E454C2423106A0092256B /* iCloud.storyboard */,
 			);
 			path = iCloud;
 			sourceTree = "<group>";
@@ -273,6 +341,7 @@
 			children = (
 				E9D90BB4240E3625006AAAF2 /* DropBoxViewController.h */,
 				E9D90BB5240E3625006AAAF2 /* DropBoxViewController.m */,
+				E96E4550242310AD0092256B /* DropBox.storyboard */,
 			);
 			path = DropBox;
 			sourceTree = "<group>";
@@ -288,7 +357,7 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		E9D90BBD240E37A0006AAAF2 /* Common */ = {
+		E9D90BBD240E37A0006AAAF2 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				E9BD1FB32422068800AC2A51 /* VerticalButton.h */,
@@ -306,7 +375,7 @@
 				E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */,
 				E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */,
 			);
-			path = Common;
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		F94FFB2B3BBEA3644FC78E83 /* Pods */ = {
@@ -381,10 +450,18 @@
 				E9BD1FB12421D97400AC2A51 /* CToolBar.xib in Resources */,
 				E9D90B7E240E2F77006AAAF2 /* LaunchScreen.storyboard in Resources */,
 				E9D90B8B240E2FD0006AAAF2 /* InfoPlist.strings in Resources */,
+				E96E454B242310350092256B /* Home.storyboard in Resources */,
+				E96E4563242348D80092256B /* FileCollectionCell.xib in Resources */,
+				E96E4553242310C80092256B /* GoogleDrive.storyboard in Resources */,
 				E9D90B91240E307E006AAAF2 /* Localizable.strings in Resources */,
 				E9D90B7B240E2F77006AAAF2 /* Assets.xcassets in Resources */,
+				E96E454D2423106A0092256B /* iCloud.storyboard in Resources */,
+				E96E4551242310AD0092256B /* DropBox.storyboard in Resources */,
+				E96E4548242300EC0092256B /* FileCell.xib in Resources */,
 				E9D90B79240E2F77006AAAF2 /* Main.storyboard in Resources */,
+				E96E4555242314750092256B /* Other.storyboard in Resources */,
 				E9FCF46C240F314F00C0A385 /* SearchBar.xib in Resources */,
+				E96E454F242310900092256B /* OneDrive.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +517,13 @@
 				E9D90B76240E2F77006AAAF2 /* MainViewController.m in Sources */,
 				E9D90BD1240E3A6E006AAAF2 /* BaseViewController.m in Sources */,
 				E9BD1FAF2421D96A00AC2A51 /* CToolBar.m in Sources */,
+				E96E4558242314980092256B /* FileListController.m in Sources */,
 				E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */,
 				E9D90BC9240E39A9006AAAF2 /* UIViewController+Utility.m in Sources */,
 				E9D90BCF240E39E8006AAAF2 /* GoogleDriveViewController.m in Sources */,
 				E9D90BD7240E4B02006AAAF2 /* Utility.m in Sources */,
 				E9D90BC6240E388F006AAAF2 /* CTextField.m in Sources */,
+				E96E4547242300EC0092256B /* FileCell.m in Sources */,
 				E9D90BDA240E56B6006AAAF2 /* HitTestView.m in Sources */,
 				E9D90B70240E2F77006AAAF2 /* AppDelegate.m in Sources */,
 				E9D90B81240E2F77006AAAF2 /* main.m in Sources */,
@@ -453,18 +532,23 @@
 				E9BD1FB42422068800AC2A51 /* VerticalButton.m in Sources */,
 				E9D90BCE240E39DF006AAAF2 /* DropBoxViewController.m in Sources */,
 				E9D90BCD240E39CE006AAAF2 /* LanguageViewController.m in Sources */,
+				E96E4566242353B20092256B /* RootViewController.m in Sources */,
 				E9D90BCB240E39BC006AAAF2 /* OneDriveViewController.m in Sources */,
 				E9D90BD0240E3A4B006AAAF2 /* iCloudViewController.m in Sources */,
 				E9D90BD4240E49DF006AAAF2 /* UIImage+Utility.m in Sources */,
 				E9D90BA3240E35A2006AAAF2 /* RightTableViewController.m in Sources */,
+				E9F5ECF2242365590093B878 /* ToolBarViewController.m in Sources */,
 				E9D90BA6240E35D1006AAAF2 /* RootNavigationController.m in Sources */,
-				E9FCF47A240F4BA500C0A385 /* PathViewController.m in Sources */,
+				E9FCF47A240F4BA500C0A385 /* FilePathViewController.m in Sources */,
 				E9D90BA2240E35A2006AAAF2 /* LeftTableViewController.m in Sources */,
 				E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */,
 				E9D90B97240E3101006AAAF2 /* TutorialViewController.m in Sources */,
+				E96C10BD242370F400817620 /* FileNavigationController.m in Sources */,
 				E9D90BCC240E39CB006AAAF2 /* LanguageInfo.m in Sources */,
+				E96E4562242348D80092256B /* FileCollectionCell.m in Sources */,
 				E9D90BC8240E399B006AAAF2 /* NSBundle+Language.m in Sources */,
 				E9D90BCA240E39B4006AAAF2 /* HomeViewController.m in Sources */,
+				E9F5ECF5242365660093B878 /* AdViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

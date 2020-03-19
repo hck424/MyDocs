@@ -75,7 +75,7 @@
             [_searchBar removeFromSuperview];
         }
     }
-    [self.view layoutIfNeeded];
+//    [self.view layoutIfNeeded];
 }
 
 - (void)setShowToolBar:(BOOL)showToolBar {
