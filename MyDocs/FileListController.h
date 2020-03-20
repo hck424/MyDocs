@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "BaseViewController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FileListController : UIViewController
+@interface FileListController : BaseViewController
 @property (nonatomic, strong) NSString *rootPath;
 @property (nonatomic, assign) LIST_TYPE listType;
-@property (nonatomic, strong) NSString *searchString;
-
 - (void)reloadData;
 @end
 

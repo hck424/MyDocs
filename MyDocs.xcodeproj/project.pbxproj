@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9D66CDEAB9781AC23892EE6 /* Pods_MyDocs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */; };
-		E96C10BD242370F400817620 /* FileNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C10BC242370F400817620 /* FileNavigationController.m */; };
+		E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C10BC242370F400817620 /* CustomNavigationController.m */; };
 		E96E4547242300EC0092256B /* FileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4545242300EC0092256B /* FileCell.m */; };
 		E96E4548242300EC0092256B /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E4546242300EC0092256B /* FileCell.xib */; };
 		E96E454B242310350092256B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E454A242310350092256B /* Home.storyboard */; };
@@ -21,8 +21,6 @@
 		E96E4562242348D80092256B /* FileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4560242348D80092256B /* FileCollectionCell.m */; };
 		E96E4563242348D80092256B /* FileCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E4561242348D80092256B /* FileCollectionCell.xib */; };
 		E96E4566242353B20092256B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4565242353B20092256B /* RootViewController.m */; };
-		E9BD1FAF2421D96A00AC2A51 /* CToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */; };
-		E9BD1FB12421D97400AC2A51 /* CToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BD1FB02421D97400AC2A51 /* CToolBar.xib */; };
 		E9BD1FB42422068800AC2A51 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD1FB22422068800AC2A51 /* VerticalButton.m */; };
 		E9D90B70240E2F77006AAAF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90B6F240E2F77006AAAF2 /* AppDelegate.m */; };
 		E9D90B73240E2F77006AAAF2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90B72240E2F77006AAAF2 /* SceneDelegate.m */; };
@@ -57,15 +55,14 @@
 		E9FCF46C240F314F00C0A385 /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FCF46B240F314F00C0A385 /* SearchBar.xib */; };
 		E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF46E240F362A00C0A385 /* UIView+Utility.m */; };
 		E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */; };
-		E9FCF47A240F4BA500C0A385 /* FilePathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF479240F4BA500C0A385 /* FilePathViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F06331DC39D7CE20940AC0F /* Pods-MyDocs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.debug.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.debug.xcconfig"; sourceTree = "<group>"; };
 		4F82F86D583B4EA1FA11AC8B /* Pods-MyDocs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.release.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.release.xcconfig"; sourceTree = "<group>"; };
 		8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDocs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E96C10BB242370F400817620 /* FileNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileNavigationController.h; sourceTree = "<group>"; };
-		E96C10BC242370F400817620 /* FileNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileNavigationController.m; sourceTree = "<group>"; };
+		E96C10BB242370F400817620 /* CustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		E96C10BC242370F400817620 /* CustomNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		E96E4544242300EC0092256B /* FileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileCell.h; sourceTree = "<group>"; };
 		E96E4545242300EC0092256B /* FileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileCell.m; sourceTree = "<group>"; };
 		E96E4546242300EC0092256B /* FileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCell.xib; sourceTree = "<group>"; };
@@ -83,9 +80,6 @@
 		E96E4561242348D80092256B /* FileCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCollectionCell.xib; sourceTree = "<group>"; };
 		E96E4564242353B20092256B /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E96E4565242353B20092256B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		E9BD1FAD2421D96A00AC2A51 /* CToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CToolBar.h; sourceTree = "<group>"; };
-		E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CToolBar.m; sourceTree = "<group>"; };
-		E9BD1FB02421D97400AC2A51 /* CToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CToolBar.xib; sourceTree = "<group>"; };
 		E9BD1FB22422068800AC2A51 /* VerticalButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalButton.m; sourceTree = "<group>"; };
 		E9BD1FB32422068800AC2A51 /* VerticalButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalButton.h; sourceTree = "<group>"; };
 		E9D90B6B240E2F77006AAAF2 /* MyDocs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDocs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,8 +148,6 @@
 		E9FCF46E240F362A00C0A385 /* UIView+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
 		E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBarButtonItem.h; sourceTree = "<group>"; };
 		E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBarButtonItem.m; sourceTree = "<group>"; };
-		E9FCF478240F4BA500C0A385 /* FilePathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilePathViewController.h; sourceTree = "<group>"; };
-		E9FCF479240F4BA500C0A385 /* FilePathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilePathViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +224,6 @@
 				E9D90B8D240E2FD0006AAAF2 /* InfoPlist.strings */,
 				E9D90B7C240E2F77006AAAF2 /* LaunchScreen.storyboard */,
 				E9D90B93240E307E006AAAF2 /* Localizable.strings */,
-				E9FCF478240F4BA500C0A385 /* FilePathViewController.h */,
-				E9FCF479240F4BA500C0A385 /* FilePathViewController.m */,
 				E96E4549242300F40092256B /* Views */,
 				E96E4554242314750092256B /* Other.storyboard */,
 				E96E4556242314980092256B /* FileListController.h */,
@@ -281,8 +271,8 @@
 				E9D90B72240E2F77006AAAF2 /* SceneDelegate.m */,
 				E9F5ECF0242365590093B878 /* ToolBarViewController.h */,
 				E9F5ECF1242365590093B878 /* ToolBarViewController.m */,
-				E96C10BB242370F400817620 /* FileNavigationController.h */,
-				E96C10BC242370F400817620 /* FileNavigationController.m */,
+				E96C10BB242370F400817620 /* CustomNavigationController.h */,
+				E96C10BC242370F400817620 /* CustomNavigationController.m */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -369,9 +359,6 @@
 				E9FCF468240F313800C0A385 /* SearchBar.h */,
 				E9FCF469240F313800C0A385 /* SearchBar.m */,
 				E9FCF46B240F314F00C0A385 /* SearchBar.xib */,
-				E9BD1FAD2421D96A00AC2A51 /* CToolBar.h */,
-				E9BD1FAE2421D96A00AC2A51 /* CToolBar.m */,
-				E9BD1FB02421D97400AC2A51 /* CToolBar.xib */,
 				E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */,
 				E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */,
 			);
@@ -447,7 +434,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9BD1FB12421D97400AC2A51 /* CToolBar.xib in Resources */,
 				E9D90B7E240E2F77006AAAF2 /* LaunchScreen.storyboard in Resources */,
 				E9D90B8B240E2FD0006AAAF2 /* InfoPlist.strings in Resources */,
 				E96E454B242310350092256B /* Home.storyboard in Resources */,
@@ -516,7 +502,6 @@
 			files = (
 				E9D90B76240E2F77006AAAF2 /* MainViewController.m in Sources */,
 				E9D90BD1240E3A6E006AAAF2 /* BaseViewController.m in Sources */,
-				E9BD1FAF2421D96A00AC2A51 /* CToolBar.m in Sources */,
 				E96E4558242314980092256B /* FileListController.m in Sources */,
 				E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */,
 				E9D90BC9240E39A9006AAAF2 /* UIViewController+Utility.m in Sources */,
@@ -539,11 +524,10 @@
 				E9D90BA3240E35A2006AAAF2 /* RightTableViewController.m in Sources */,
 				E9F5ECF2242365590093B878 /* ToolBarViewController.m in Sources */,
 				E9D90BA6240E35D1006AAAF2 /* RootNavigationController.m in Sources */,
-				E9FCF47A240F4BA500C0A385 /* FilePathViewController.m in Sources */,
 				E9D90BA2240E35A2006AAAF2 /* LeftTableViewController.m in Sources */,
 				E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */,
 				E9D90B97240E3101006AAAF2 /* TutorialViewController.m in Sources */,
-				E96C10BD242370F400817620 /* FileNavigationController.m in Sources */,
+				E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */,
 				E9D90BCC240E39CB006AAAF2 /* LanguageInfo.m in Sources */,
 				E96E4562242348D80092256B /* FileCollectionCell.m in Sources */,
 				E9D90BC8240E399B006AAAF2 /* NSBundle+Language.m in Sources */,

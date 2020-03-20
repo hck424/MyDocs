@@ -10,11 +10,15 @@
 #import "FileCell.h"
 #import "KafkaRefresh.h"
 #import "FileCollectionCell.h"
+#import "AppDelegate.h"
 
-@interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, SearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UIView *bgSearchView;
+@property (weak, nonatomic) IBOutlet UIView *bgListView;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (nonatomic, strong) SearchBar *searchBar;
 @end
 
 @implementation FileListController
@@ -22,27 +26,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.searchBar = [[NSBundle mainBundle] loadNibNamed:@"SearchBar" owner:self options:nil].firstObject;
+    _searchBar.delegate = self;
+    [_bgSearchView addSubview:_searchBar];
+    _searchBar.translatesAutoresizingMaskIntoConstraints = NO;
+    [_searchBar.topAnchor constraintEqualToAnchor:_bgSearchView.topAnchor constant:0].active = YES;
+    [_searchBar.leadingAnchor constraintEqualToAnchor:_bgSearchView.leadingAnchor constant:0].active = YES;
+    [_searchBar.bottomAnchor constraintEqualToAnchor:_bgSearchView.bottomAnchor constant:0].active = YES;
+    [_searchBar.trailingAnchor constraintEqualToAnchor:_bgSearchView.trailingAnchor constant:0].active = YES;
+    
     [_collectionView registerNib:[UINib nibWithNibName:@"FileCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"FileCollectionCell"];
     _tblView.rowHeight = UITableViewAutomaticDimension;
     _tblView.estimatedRowHeight = 60.0f;
     __weak typeof(self)weakSelf = self;
+    
     [_tblView bindHeadRefreshHandler:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.tblView.headRefreshControl endRefreshing];
         });
     } themeColor:COLOR_APP_DEFAULT refreshStyle:KafkaRefreshStyleReplicatorCircle];
  
+    [_collectionView bindHeadRefreshHandler:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.collectionView.headRefreshControl endRefreshing];
+        });
+    } themeColor:COLOR_APP_DEFAULT refreshStyle:KafkaRefreshStyleReplicatorCircle];
     [self reloadData];
+    
+    
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[AppDelegate instance].toolBarViewController addTouchUpInsideAction:self selector:@selector(onClickedButtonActions:)];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[AppDelegate instance].toolBarViewController removeUpInsideAction:self selector:@selector(onClickedButtonActions:)];
+}
 - (void)willMoveToParentViewController:(UIViewController *)parent {
     [super willMoveToParentViewController:parent];
 }
 - (void)didMoveToParentViewController:(UIViewController *)parent {
     [super didMoveToParentViewController:parent];
-}
-- (void)setSearchString:(NSString *)searchString {
-    _searchString = searchString;
 }
 
 - (void)reloadData {
@@ -73,6 +98,43 @@
         [self reloadData];
     }
 }
+
+- (IBAction)onClickedButtonActions:(UIButton *)sender {
+    
+    if (sender.tag == TAG_TOOL_BTN_SELECT) {
+        sender.selected = !sender.selected;
+        if (sender.selected) {
+            [AppDelegate instance].toolBarViewController.type = ToolBarTypeDelete;
+        }
+        else {
+            [AppDelegate instance].toolBarViewController.type = ToolBarTypeDefault;
+        }
+    }
+    else if (sender.tag == TAG_TOOL_BTN_SORT) {
+        
+    }
+    else if (sender.tag == TAG_TOOL_BTN_DELETE) {
+        
+    }
+    else if (sender.tag == TAG_TOOL_BTN_ADDFILES) {
+        
+    }
+    else if (sender.tag == TAG_TOOL_BTN_NEWFOLDER) {
+        
+    }
+}
+#pragma mark SearchBarDelegate
+- (void)searchBar:(id)searchBar changedListType:(LIST_TYPE)listType {
+    self.listType = listType;
+}
+- (void)searchBar:(id)searchBar editingChangedString:(NSString *)text {
+    
+}
+- (BOOL)searchBar:(id)searchBar textFieldShouldReturn:(UITextField *)textFiled {
+    
+    return YES;
+}
+
 //MARK::UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
@@ -94,6 +156,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    FileListController *vc = [[UIStoryboard storyboardWithName:@"Other" bundle:nil] instantiateViewControllerWithIdentifier:@"FileListController"];
+    vc.title = @"aaa";
+    [[AppDelegate instance].customNavigationController pushViewController:vc animated:YES];
 }
 
 //MARK:: UICollectionViewDataSource, UICollectionViewDelegate

@@ -26,7 +26,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="HDT-1o-7VE" firstAttribute="trailing" secondItem="0HR-Ud-qZ2" secondAttribute="trailing" id="EpB-Up-UQd"/>
-                            <constraint firstItem="0HR-Ud-qZ2" firstAttribute="top" secondItem="HDT-1o-7VE" secondAttribute="top" identifier="CT" id="Fox-b6-PnK"/>
+                            <constraint firstItem="0HR-Ud-qZ2" firstAttribute="top" secondItem="HDT-1o-7VE" secondAttribute="top" id="Fox-b6-PnK"/>
                             <constraint firstItem="0HR-Ud-qZ2" firstAttribute="leading" secondItem="HDT-1o-7VE" secondAttribute="leading" id="jpX-BX-aDz"/>
                             <constraint firstAttribute="bottom" secondItem="0HR-Ud-qZ2" secondAttribute="bottom" identifier="CB" id="toL-GF-7aP"/>
                         </constraints>

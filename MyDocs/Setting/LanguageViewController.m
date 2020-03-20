@@ -31,10 +31,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
     [super viewWillAppear:animated];
     self.title = NSLocalizedString(@"language", @"");
-    self.navigationController.navigationItem.backBarButtonItem.title = self.title;
-    self.title = nil;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 - (IBAction)onClickedbuttonActions:(id)sender {
     if (sender ==  _btnBack) {

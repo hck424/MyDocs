@@ -14,4 +14,17 @@ typedef NS_ENUM(NSUInteger, LIST_TYPE) {
     LIST_TYPE_COLLECTION
 };
 
+typedef NS_ENUM(NSUInteger, ToolBarType) {
+    ToolBarTypeDefault,
+    ToolBarTypeDelete,
+};
+typedef NS_ENUM(NSUInteger, TAG_TOOL_BTN) {
+    TAG_TOOL_BTN_SELECT = 11111,
+    TAG_TOOL_BTN_SORT,
+    TAG_TOOL_BTN_NEWFOLDER,
+    TAG_TOOL_BTN_ADDFILES,
+    TAG_TOOL_BTN_DELETE,
+};
+
+
 #endif /* Constants_h */

@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MainViewController.h"
-#import "UIViewController+LGSideMenuController.h"
-#import "LeftTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RootNavigationController : UINavigationController
-- (void)changeRootViewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

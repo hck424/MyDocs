@@ -10,23 +10,53 @@
 
 @interface ToolBarViewController ()
 
+@property (weak, nonatomic) IBOutlet UIStackView *svContent;
+@property (weak, nonatomic) IBOutlet VerticalButton *btnSelect;
+@property (weak, nonatomic) IBOutlet VerticalButton *btnRemove;
+@property (weak, nonatomic) IBOutlet VerticalButton *btnSort;
+@property (weak, nonatomic) IBOutlet VerticalButton *btnNewFolder;
+@property (weak, nonatomic) IBOutlet VerticalButton *btnAddFile;
+
 @end
 
 @implementation ToolBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.btnSelect.tag = TAG_TOOL_BTN_SELECT;
+    self.btnRemove.tag = TAG_TOOL_BTN_DELETE;
+    self.btnSort.tag = TAG_TOOL_BTN_SORT;
+    self.btnNewFolder.tag = TAG_TOOL_BTN_NEWFOLDER;
+    self.btnAddFile.tag = TAG_TOOL_BTN_DELETE;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)onClickedButtonAction:(UIButton *)sender {
 }
-*/
+- (void)setType:(ToolBarType)type {
+    _type = type;
+    
+    self.btnSelect.hidden = NO;
+    self.btnSort.hidden = NO;
+    self.btnNewFolder.hidden = NO;
+    self.btnRemove.hidden = NO;
+    self.btnAddFile.hidden = NO;
+    
+    if (_type == ToolBarTypeDefault) {
+        _btnRemove.hidden = YES;
+    }
+    else if (_type == ToolBarTypeDelete) {
+        _btnSort.hidden = YES;
+    }
+}
+- (void)removeUpInsideAction:(id)controller selector:(SEL)selector {
+    for (UIButton *btn in _svContent.subviews) {
+        [btn removeTarget:controller action:selector forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+- (void)addTouchUpInsideAction:(id)controller selector:(SEL)selector {
+    for (UIButton *btn in _svContent.subviews) {
+        [btn addTarget:controller action:selector forControlEvents:UIControlEventTouchUpInside];
+    }
+}
 
 @end

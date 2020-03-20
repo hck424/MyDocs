@@ -13,6 +13,7 @@
 
 @interface LeftTableViewController ()
 @property (nonatomic, strong) NSMutableArray *arrData;
+@property (nonatomic, strong) NSString *selRootId;
 
 @end
 
@@ -21,10 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.arrData = [NSMutableArray array];
-    
     [self reloadData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
 - (void)makeSectionData {
     
     NSDictionary *itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"folder"], @"image", NSLocalizedString(@"home", @""), @"title", RootIdHome, @"rootId", nil];
@@ -49,12 +52,15 @@
     [arrSec addObject:itemDic];
     [_arrData addObject:arrSec];
     
-    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage systemImageNamed:@"a"], @"image",
-               NSLocalizedString(@"language", @""), @"title", nil];
+    if (@available(iOS 13.0, *)) {
+        itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage systemImageNamed:@"a"], @"image",
+                   NSLocalizedString(@"language", @""), @"title", nil];
+    }
     [_arrData addObject:[NSArray arrayWithObject:itemDic]];
 }
 - (void)reloadData {
     [_arrData removeAllObjects];
+    self.selRootId = [[NSUserDefaults standardUserDefaults] objectForKey:SelectedRootId];
     [self makeSectionData];
     
     [self.tableView reloadData];
@@ -81,8 +87,8 @@
     cell.textLabel.text = [itemDic objectForKey:@"title"];
     
     NSString *rootId = [itemDic objectForKey:@"rootId"];
-    NSString *curRootId = [[NSUserDefaults standardUserDefaults] objectForKey:SelectedRootId];
-    if ([rootId isEqualToString:curRootId]) {
+    
+    if ([rootId isEqualToString:_selRootId]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else {
@@ -122,28 +128,22 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             NSString *rootId = [itemDic objectForKey:@"rootId"];
-            [[NSUserDefaults standardUserDefaults] setObject:rootId forKey:SelectedRootId];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-//            RootNavigationController *rootNaviVc = [AppDelegate instance].rootNavigationController;
-//            [rootNaviVc changeRootViewController];
+            CustomNavigationController *customNavi = [AppDelegate instance].customNavigationController;
+            [customNavi changeRootViewController:rootId];
             [self.tableView reloadData];
         }
     }
     else if (indexPath.section == 1) {
         NSString *rootId = [itemDic objectForKey:@"rootId"];
-        [[NSUserDefaults standardUserDefaults] setObject:rootId forKey:SelectedRootId];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-//        RootNavigationController *rootNaviVc = [AppDelegate instance].rootNavigationController;
-//        [rootNaviVc changeRootViewController];
+        CustomNavigationController *customNavi = [AppDelegate instance].customNavigationController;
+        [customNavi changeRootViewController:rootId];
         [self.tableView reloadData];
         
     }
     else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             LanguageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LanguageViewController"];
-//            [[AppDelegate instance].rootNavigationController pushViewController:vc animated:YES];
+            [[AppDelegate instance].rootNavigationController pushViewController:vc animated:YES];
         }
     }
 }

@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
-#import "CTextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RootViewController : BaseViewController
-
+@interface RootViewController : UIViewController
+@property (nonatomic, assign) BOOL hasAd;
 @end
 
 NS_ASSUME_NONNULL_END

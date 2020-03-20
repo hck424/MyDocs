@@ -15,42 +15,10 @@
                     <view key="view" contentMode="scaleToFill" id="Etf-Se-RAJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3CP-Lh-RWH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y2-Jm-ZTd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="csZ-ML-OKc"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7G-WS-A67">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="768"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="3CP-Lh-RWH" firstAttribute="leading" secondItem="8Lx-T1-K9G" secondAttribute="leading" id="A4K-WC-29A"/>
-                            <constraint firstItem="3CP-Lh-RWH" firstAttribute="top" secondItem="8Lx-T1-K9G" secondAttribute="top" id="DcH-5f-fgu"/>
-                            <constraint firstItem="8Lx-T1-K9G" firstAttribute="trailing" secondItem="3CP-Lh-RWH" secondAttribute="trailing" id="Qye-hN-Qhk"/>
-                            <constraint firstItem="8Lx-T1-K9G" firstAttribute="bottom" secondItem="3CP-Lh-RWH" secondAttribute="bottom" id="lbG-E4-ppn"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Lx-T1-K9G"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="As7-bf-dMj"/>
-                        <barButtonItem title="Item" id="d1F-fP-QAP"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ilZ-Ws-FkE"/>
-                        <barButtonItem title="Item" id="rdL-PM-vVd"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cGS-ZQ-WBy"/>
-                        <barButtonItem title="Item" id="uf6-9m-BqY"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2YV-tC-Ryr"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>

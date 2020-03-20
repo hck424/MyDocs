@@ -22,15 +22,9 @@
     MainViewController *mainViewController = (MainViewController *)[self.window rootViewController];
     return (RootNavigationController *)mainViewController.rootViewController;
 }
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[KafkaRefreshDefaults standardRefreshDefaults] setHeadDefaultStyle:KafkaRefreshStyleAnimatableRing];
-    NSString *selRootId = [[NSUserDefaults standardUserDefaults] objectForKey:SelectedRootId];
-    if (selRootId.length == 0) {
-        [[NSUserDefaults standardUserDefaults] setObject:RootIdHome forKey:SelectedRootId];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
     
     [NSBundle setLanguage:UserLanguageTblName];
 

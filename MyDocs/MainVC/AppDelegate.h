@@ -11,15 +11,18 @@
 #import "NSBundle+Language.h"
 #import "MainViewController.h"
 #import "TutorialViewController.h"
+#import "CustomNavigationController.h"
+#import "ToolBarViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow * window;
 @property (nonatomic, strong) MainViewController *mainViewController;
-
+@property (nonatomic, strong) CustomNavigationController *customNavigationController;
+@property (nonatomic, strong) ToolBarViewController *toolBarViewController;
 + (AppDelegate *)instance;
 
-//- (RootNavigationController *)rootNavigationController;
+- (RootNavigationController *)rootNavigationController;
 - (void)callTutorialViewController;
 - (void)callMainViewController;
 @end
