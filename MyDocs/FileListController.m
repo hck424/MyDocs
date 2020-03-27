@@ -11,14 +11,17 @@
 #import "KafkaRefresh.h"
 #import "FileCollectionCell.h"
 #import "AppDelegate.h"
+#import "DBManager.h"
 
-@interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, SearchBarDelegate>
+@interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, SearchBarDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgSearchView;
 @property (weak, nonatomic) IBOutlet UIView *bgListView;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) SearchBar *searchBar;
+@property (nonatomic, strong) NSArray *arrData;
+@property (nonatomic, assign) FILE_SORT_TYPE sortType;
 @end
 
 @implementation FileListController
@@ -41,6 +44,7 @@
     __weak typeof(self)weakSelf = self;
     
     [_tblView bindHeadRefreshHandler:^{
+        [weakSelf requestData];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.tblView.headRefreshControl endRefreshing];
         });
@@ -51,13 +55,13 @@
             [weakSelf.collectionView.headRefreshControl endRefreshing];
         });
     } themeColor:COLOR_APP_DEFAULT refreshStyle:KafkaRefreshStyleReplicatorCircle];
-    [self reloadData];
     
     
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[AppDelegate instance].toolBarViewController addTouchUpInsideAction:self selector:@selector(onClickedButtonActions:)];
+    [self requestData];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -70,6 +74,14 @@
     [super didMoveToParentViewController:parent];
 }
 
+- (void)requestData {
+    [[DBManager instance] requestAllItemsWithPath:_rootPath completion:^(NSArray * _Nullable result, NSError * _Nullable error) {
+        if (result.count > 0) {
+            self.arrData = result;
+        }
+        [self reloadData];
+    }];
+}
 - (void)reloadData {
     if (_listType == LIST_TYPE_TABLE) {
         _collectionView.hidden = YES;
@@ -120,7 +132,35 @@
         
     }
     else if (sender.tag == TAG_TOOL_BTN_NEWFOLDER) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"new_folder", nil) message:@"" preferredStyle:UIAlertControllerStyleAlert];
         
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [alert dismissViewControllerAnimated:NO completion:nil];
+        }]];
+        
+        __weak typeof(self)weakSelf = self;
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSString *newFolderName = ((UITextField *)[alert textFields].firstObject).text;
+            if (newFolderName.length > 0) {
+                [weakSelf createNewFolder:newFolderName];
+            }
+            [alert dismissViewControllerAnimated:NO completion:nil];
+        }]];
+        
+        
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = NSLocalizedString(@"create_new_folder_des", nil);
+            [textField becomeFirstResponder];
+        }];
+        
+        [[AppDelegate instance].rootNavigationController presentViewController:alert animated:YES completion:nil];
+    }
+}
+- (void)createNewFolder:(NSString *)folderName {
+    NSString *path = [NSString stringWithFormat:@"%@/%@", _rootPath, folderName];
+    BOOL success = [FCFileManager createDirectoriesForPath:path];
+    if (success) {
+        [self requestData];
     }
 }
 #pragma mark SearchBarDelegate
@@ -137,7 +177,7 @@
 
 //MARK::UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _arrData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileCell"];
@@ -145,6 +185,8 @@
         cell = [[NSBundle mainBundle] loadNibNamed:@"FileCell" owner:self options:nil].firstObject;
     }
     
+    Item *item = [_arrData objectAtIndex:indexPath.row];
+    [cell configurationData:item sortType:_sortType];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -157,9 +199,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    FileListController *vc = [[UIStoryboard storyboardWithName:@"Other" bundle:nil] instantiateViewControllerWithIdentifier:@"FileListController"];
-    vc.title = @"aaa";
-    [[AppDelegate instance].customNavigationController pushViewController:vc animated:YES];
+    Item *item = [_arrData objectAtIndex:indexPath.row];
+    if ([item.fileType isEqualToString:NSFileTypeDirectory]) {
+        FileListController *vc = [[UIStoryboard storyboardWithName:@"Other" bundle:nil] instantiateViewControllerWithIdentifier:@"FileListController"];
+        vc.title = item.displayName;
+        vc.rootPath = item.userPath;
+        [[AppDelegate instance].customNavigationController pushViewController:vc animated:YES];
+    }
+    else {
+        
+    }
 }
 
 //MARK:: UICollectionViewDataSource, UICollectionViewDelegate
@@ -182,6 +231,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     FileCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FileCollectionCell" forIndexPath:indexPath];
+    Item *item = [_arrData objectAtIndex:indexPath.row];
+    [cell configurationData:item];
     
     return cell;
 }

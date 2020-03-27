@@ -8,5 +8,12 @@
 "one_drive" = "OneDrive";
 "setting" = "Setting";
 "language" = "Language";
-
-
+"select" = "Select";
+"sort" = "Sort";
+"new_folder" = "New Folder";
+"add_files" = "Add Files";
+"remove" = "Remove";
+"referal_count" = "%d items";
+"ok" = "Ok";
+"cancel" = "Cancel";
+"create_new_folder_des" = "Please enter a new folder name.";

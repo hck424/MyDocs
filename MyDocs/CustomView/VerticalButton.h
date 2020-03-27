@@ -12,4 +12,5 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable CGFloat imgWidth;
 @property (nonatomic, assign) IBInspectable CGFloat imgHeight;
 @property (nonatomic, assign) IBInspectable CGFloat space;
+@property (nonatomic, strong) IBInspectable NSString *localizeKey;
 @end

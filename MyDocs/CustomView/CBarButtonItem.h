@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSUInteger, TAG_NAVI_ITEM) {
+    TAG_NAVI_ITEM_BACK = 1110,
+};
 @interface CBarButtonItem : UIBarButtonItem
 @property (nonatomic, strong) UIColor  *naviBarTintColor;
 @property (nonatomic, strong) UIColor *naviTintColor;

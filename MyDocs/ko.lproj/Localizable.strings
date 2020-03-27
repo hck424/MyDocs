@@ -8,3 +8,12 @@
 "one_drive" = "OneDrive";
 "setting" = "설정";
 "language" = "언어";
+"select" = "선택";
+"sort" = "정렬";
+"new_folder" = "새 폴더";
+"add_files" = "새 파일";
+"remove" = "삭제";
+"referal_count" = "%d 개";
+"ok" = "확인";
+"cancel" = "취소";
+"create_new_folder_des" = "새폴더 이름을 입력해주세요.";

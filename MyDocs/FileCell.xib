@@ -20,25 +20,33 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PE4-dK-hX3">
                         <rect key="frame" x="0.0" y="0.0" width="333" height="53"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTv-mi-5G1">
+                                <rect key="frame" x="16" y="5.5" width="30" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="30" id="Y7T-kc-cNP"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" image="icon_full_moon"/>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fej-l2-uIO">
-                                <rect key="frame" x="16" y="6.5" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.37254901959999998" green="0.39607843139999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="62" y="6.5" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Coc-dK-IPa"/>
                                     <constraint firstAttribute="width" constant="40" id="vLA-jt-FgR"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="nPh-zG-9JY">
-                                <rect key="frame" x="72" y="8" width="200" height="37"/>
+                                <rect key="frame" x="118" y="8" width="154" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gO-Jk-Y7b">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jM-go-gYb">
-                                        <rect key="frame" x="0.0" y="21" width="200" height="16"/>
+                                        <rect key="frame" x="0.0" y="21" width="154" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.49019607840000001" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -50,12 +58,13 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="ShO-Cb-0ZR"/>
                                 </constraints>
-                                <state key="normal" image="menu_vertical">
+                                <state key="normal" image="icon_more_vertical">
                                     <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="gTv-mi-5G1" firstAttribute="height" secondItem="PE4-dK-hX3" secondAttribute="height" multiplier="0.8" priority="999" id="w7j-PO-jq2"/>
                             <constraint firstItem="Y9T-Uo-X8l" firstAttribute="height" secondItem="PE4-dK-hX3" secondAttribute="height" multiplier="0.8" id="xaV-As-A8c"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="5" left="16" bottom="5" right="0.0"/>
@@ -69,10 +78,17 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="btnCheck" destination="gTv-mi-5G1" id="Pq6-4B-uWf"/>
+                <outlet property="ivThumnail" destination="fej-l2-uIO" id="YGZ-ZP-Pu0"/>
+                <outlet property="lbDes" destination="3jM-go-gYb" id="3eq-Ax-Dau"/>
+                <outlet property="lbName" destination="2gO-Jk-Y7b" id="KgG-s4-Pnk"/>
+            </connections>
             <point key="canvasLocation" x="58.695652173913047" y="92.075892857142847"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="menu_vertical" width="22" height="22"/>
+        <image name="icon_full_moon" width="22" height="22"/>
+        <image name="icon_more_vertical" width="22" height="22"/>
     </resources>
 </document>

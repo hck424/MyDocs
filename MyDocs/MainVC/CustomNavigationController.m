@@ -76,7 +76,7 @@
 }
 
 - (UIBarButtonItem *)getMenuNaviBar {
-    UIBarButtonItem *navibar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickedMenuAction:)];
+    UIBarButtonItem *navibar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickedMenuAction:)];
     navibar.tintColor = [UIColor whiteColor];
     navibar.accessibilityValue = @"Menu";
     return navibar;

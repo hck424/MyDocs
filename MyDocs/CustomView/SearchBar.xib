@@ -65,10 +65,10 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="46" id="CeU-ff-99P"/>
                             </constraints>
-                            <state key="normal" image="list">
+                            <state key="normal" image="icon_bulleted_list">
                                 <color key="titleColor" red="0.043137254899999998" green="0.066666666669999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <state key="selected" image="squared_menu"/>
+                            <state key="selected" image="icon_squared_menu"/>
                             <connections>
                                 <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="spp-q4-9Ah"/>
                             </connections>
@@ -93,7 +93,7 @@
         </view>
     </objects>
     <resources>
-        <image name="list" width="22" height="16"/>
-        <image name="squared_menu" width="22" height="22"/>
+        <image name="icon_bulleted_list" width="22" height="22"/>
+        <image name="icon_squared_menu" width="22" height="22"/>
     </resources>
 </document>

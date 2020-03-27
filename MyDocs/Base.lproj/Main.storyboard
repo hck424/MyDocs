@@ -79,28 +79,28 @@
             <objects>
                 <viewController storyboardIdentifier="ToolBarViewController" id="R05-N7-80G" customClass="ToolBarViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ndS-ba-6Aq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-gs-Bbf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-rT-Jyo">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="TdL-dd-FUR"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-Vq-u3f">
-                                        <rect key="frame" x="0.0" y="1" width="414" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-Vq-u3f">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ey-Yw-vem" customClass="VerticalButton">
-                                                <rect key="frame" x="20" y="0.0" width="53" height="43"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <state key="normal" title="Select" image="support_n">
+                                                <state key="normal" image="icon_support">
                                                     <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -113,14 +113,15 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="space">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="select"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBu-9R-uaD" customClass="VerticalButton">
-                                                <rect key="frame" x="73" y="0.0" width="0.0" height="43"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBu-9R-uaD" customClass="VerticalButton">
+                                                <rect key="frame" x="120" y="0.0" width="120" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Remove " image="remove">
+                                                <state key="normal" title="Remove " image="icon_trash_can">
                                                     <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -133,14 +134,15 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="space">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="remove"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT2-Xr-co1" customClass="VerticalButton">
-                                                <rect key="frame" x="116.5" y="0.0" width="43" height="43"/>
+                                                <rect key="frame" x="240" y="0.0" width="120" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Sort" image="sorted">
+                                                <state key="normal" title="Sort" image="icon_descending_sorting">
                                                     <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -153,14 +155,15 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="space">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="sort"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAf-zo-erC" customClass="VerticalButton">
-                                                <rect key="frame" x="203.5" y="0.0" width="77" height="43"/>
+                                                <rect key="frame" x="360" y="0.0" width="120" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="New Folder" image="add_folder">
+                                                <state key="normal" title="New Folder" image="icon_add_folder">
                                                     <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -173,14 +176,15 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="space">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="new_folder"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ine-CY-pW8" customClass="VerticalButton">
-                                                <rect key="frame" x="324" y="0.0" width="70" height="43"/>
+                                                <rect key="frame" x="480" y="0.0" width="120" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Add Files " image="add_file">
+                                                <state key="normal" title="Add Files " image="icon_add_file">
                                                     <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -193,11 +197,12 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="space">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="add_files"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -212,7 +217,10 @@
                             <constraint firstAttribute="top" secondItem="rXf-gs-Bbf" secondAttribute="top" id="jec-dx-Xq4"/>
                             <constraint firstAttribute="leading" secondItem="rXf-gs-Bbf" secondAttribute="leading" id="mwZ-sM-bHI"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="TJ6-2k-dZ3"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="84"/>
                     <connections>
                         <outlet property="btnAddFile" destination="ine-CY-pW8" id="66V-69-FyH"/>
                         <outlet property="btnNewFolder" destination="VAf-zo-erC" id="OTU-ER-koH"/>
@@ -503,9 +511,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-kl-Cdg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-kl-Cdg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="b7v-NW-GDR" id="tuO-E4-RfE"/>
@@ -522,6 +531,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zYI-2o-1mB"/>
                     </view>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tblView" destination="aoq-kl-Cdg" id="9DE-DM-cIc"/>
                     </connections>
@@ -549,10 +561,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_file" width="22" height="22"/>
-        <image name="add_folder" width="22" height="22"/>
-        <image name="remove" width="22" height="22"/>
-        <image name="sorted" width="22" height="22"/>
-        <image name="support_n" width="22" height="22"/>
+        <image name="icon_add_file" width="22" height="22"/>
+        <image name="icon_add_folder" width="22" height="22"/>
+        <image name="icon_descending_sorting" width="22" height="22"/>
+        <image name="icon_support" width="22" height="22"/>
+        <image name="icon_trash_can" width="22" height="22"/>
     </resources>
 </document>

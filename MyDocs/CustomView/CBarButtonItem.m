@@ -119,6 +119,19 @@
 + (void)naviBackBtn:(UIViewController *)controller action:(SEL)action {
     controller.navigationController.navigationItem.hidesBackButton = NO;
     controller.navigationController.navigationItem.leftItemsSupplementBackButton = NO;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.tintColor = [UIColor whiteColor];
+    [btn setImage:[UIImage imageNamed:@"icon_back"] forState:UIControlStateNormal];
+    [btn setTitle:@"Back" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:17.0 weight:UIFontWeightSemibold];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.tag = TAG_NAVI_ITEM_BACK;
+    [btn addTarget:controller action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    controller.navigationItem.leftBarButtonItem = barBtn;
 }
 
 + (void)naviLeftBarButtons:(UIViewController *)controller images:(NSArray *)images tags:(NSArray *)tags action:(SEL)action {

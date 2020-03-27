@@ -18,12 +18,21 @@ typedef NS_ENUM(NSUInteger, ToolBarType) {
     ToolBarTypeDefault,
     ToolBarTypeDelete,
 };
+
 typedef NS_ENUM(NSUInteger, TAG_TOOL_BTN) {
     TAG_TOOL_BTN_SELECT = 11111,
     TAG_TOOL_BTN_SORT,
     TAG_TOOL_BTN_NEWFOLDER,
     TAG_TOOL_BTN_ADDFILES,
     TAG_TOOL_BTN_DELETE,
+};
+
+typedef NS_ENUM(NSUInteger, FILE_SORT_TYPE) {
+    FILE_SORT_TYPE_NAME,
+    FILE_SORT_TYPE_SIZE,
+    FILE_SORT_TYPE_CREATE_DATE,
+    FILE_SORT_TYPE_MODI_DATE,
+    FILE_SORT_TYPE_ITEM_COUNT
 };
 
 

@@ -19,6 +19,17 @@
 @implementation HomeViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if ([FCFileManager isDirectoryItemAtPath:@"home"] == NO) {
+        NSError *error = nil;
+        BOOL success = [FCFileManager createDirectoriesForPath:@"home" error:&error];
+        if (success) {
+            NSLog(@"create home directorypath");
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

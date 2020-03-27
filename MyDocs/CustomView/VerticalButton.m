@@ -27,20 +27,13 @@ IB_DESIGNABLE
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-//- (void)drawRect:(CGRect)rect {
-//    [super drawRect:rect];
-//    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-//    self.imageView.frame = CGRectMake((self.frame.size.width - _imgWidth)/2,
-//                                      self.imageEdgeInsets.top,
-//                                      _imgWidth,
-//                                      _imgHeight);
-//    self.titleLabel.frame = CGRectMake(self.titleEdgeInsets.left,
-//                                       self.imageEdgeInsets.top + _imgHeight + _space,
-//                                       self.frame.size.width - self.titleEdgeInsets.left - self.titleEdgeInsets.right,
-//                                       self.frame.size.height - self.imageEdgeInsets.top - self.imageEdgeInsets.bottom - _space - _imgHeight);
-//
-//    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-//}
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    if (_localizeKey.length > 0) {
+        [self setTitle:NSLocalizedString(_localizeKey, @"") forState:UIControlStateNormal];
+    }
+}
 - (void)setImgWidth:(CGFloat)imgWidth {
     _imgWidth = imgWidth;
     [self setNeedsDisplay];
@@ -51,6 +44,14 @@ IB_DESIGNABLE
 }
 - (void)setSpace:(CGFloat)space {
     _space = space;
+    [self setNeedsDisplay];
+}
+- (void)setLocalizeKey:(NSString *)localizeKey {
+    _localizeKey = localizeKey;
+    [self setNeedsDisplay];
+}
+- (void)setHidden:(BOOL)hidden {
+    [super setHidden:hidden];
     [self setNeedsDisplay];
 }
 @end

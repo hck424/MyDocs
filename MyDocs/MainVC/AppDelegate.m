@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "KafkaRefresh.h"
+#import "LanguageInfo.h"
 
 @interface AppDelegate ()
 
@@ -26,8 +27,14 @@
     
     [[KafkaRefreshDefaults standardRefreshDefaults] setHeadDefaultStyle:KafkaRefreshStyleAnimatableRing];
     
-    [NSBundle setLanguage:UserLanguageTblName];
-
+    NSString *countryCode = UserCountryCode;
+    if (countryCode.length == 0) {
+        countryCode = @"US";
+        [[NSUserDefaults standardUserDefaults] setObject:countryCode forKey:@"USER_COUNTRY_CODE"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    LanguageInfo *lngInfo = [[LanguageInfo alloc] initWithCountryCode:countryCode];
+    [NSBundle setLanguage:lngInfo.localizeTblName];
     
     if (@available(iOS 13.0, *)) {
     }

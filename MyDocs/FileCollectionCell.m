@@ -7,12 +7,16 @@
 //
 
 #import "FileCollectionCell.h"
-
+@interface FileCollectionCell()
+@property (nonatomic, strong) Item *item;
+@end
 @implementation FileCollectionCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
-
+- (void)configurationData:(Item *)item {
+    self.item = item;
+}
 @end

@@ -30,12 +30,12 @@
 }
 - (void)makeSectionData {
     
-    NSDictionary *itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"folder"], @"image", NSLocalizedString(@"home", @""), @"title", RootIdHome, @"rootId", nil];
+    NSDictionary *itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"icon_home"], @"image", NSLocalizedString(@"home", @""), @"title", RootIdHome, @"rootId", nil];
 
     [_arrData addObject:[NSArray arrayWithObject:itemDic]];
   
     NSMutableArray *arrSec = [NSMutableArray array];
-    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"iCloud"], @"image",
+    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"icloud"], @"image",
                NSLocalizedString(@"icloud", @""), @"title", RootIdiCloud, @"rootId", nil];
     [arrSec addObject:itemDic];
     
@@ -47,13 +47,13 @@
                NSLocalizedString(@"google_drive", @""), @"title", RootIdGoogle, @"rootId", nil];
     [arrSec addObject:itemDic];
     
-    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"one_drive"], @"image",
+    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"onedrive"], @"image",
                NSLocalizedString(@"one_drive", @""), @"title", RootIdiOneDrive, @"rootId", nil];
     [arrSec addObject:itemDic];
     [_arrData addObject:arrSec];
     
     if (@available(iOS 13.0, *)) {
-        itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage systemImageNamed:@"a"], @"image",
+        itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"icon_language"], @"image",
                    NSLocalizedString(@"language", @""), @"title", nil];
     }
     [_arrData addObject:[NSArray arrayWithObject:itemDic]];

@@ -9,9 +9,10 @@
 #import "LanguageViewController.h"
 #import "LanguageInfo.h"
 #import "NSBundle+Language.h"
+#import "CBarButtonItem.h"
 
 @interface LanguageViewController () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
+
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, strong) NSString *selCountryCode;
@@ -27,7 +28,7 @@
     self.arrData = [NSMutableArray array];
     [self makeData];
     
-    self.tblView.tableFooterView = [[UIView alloc] init];
+    [CBarButtonItem naviBackBtn:self action:@selector(onClickedbuttonActions:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,8 +40,8 @@
     [super viewWillDisappear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
-- (IBAction)onClickedbuttonActions:(id)sender {
-    if (sender ==  _btnBack) {
+- (IBAction)onClickedbuttonActions:(UIButton *)sender {
+    if (sender.tag == TAG_NAVI_ITEM_BACK) {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -78,7 +79,12 @@
     
     return cell;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 100.0;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     LanguageInfo *info = [_arrData objectAtIndex:indexPath.row];
