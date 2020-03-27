@@ -35,7 +35,7 @@
     [_arrData addObject:[NSArray arrayWithObject:itemDic]];
   
     NSMutableArray *arrSec = [NSMutableArray array];
-    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"icloud"], @"image",
+    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"iCloud"], @"image",
                NSLocalizedString(@"icloud", @""), @"title", RootIdiCloud, @"rootId", nil];
     [arrSec addObject:itemDic];
     
@@ -47,7 +47,7 @@
                NSLocalizedString(@"google_drive", @""), @"title", RootIdGoogle, @"rootId", nil];
     [arrSec addObject:itemDic];
     
-    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"onedrive"], @"image",
+    itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"one_drive"], @"image",
                NSLocalizedString(@"one_drive", @""), @"title", RootIdiOneDrive, @"rootId", nil];
     [arrSec addObject:itemDic];
     [_arrData addObject:arrSec];
