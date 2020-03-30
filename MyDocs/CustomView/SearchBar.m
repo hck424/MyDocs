@@ -15,29 +15,36 @@
 }
 
 - (IBAction)textFieldEdtingChanged:(UITextField *)sender {
-    if ([self.delegate respondsToSelector:@selector(searchBar:editingChangedString:)]) {
-        [_delegate searchBar:self editingChangedString:sender.text];
+    if ([self.delegate respondsToSelector:@selector(editingChangedString:)]) {
+        [_delegate editingChangedString:sender.text];
     }
 }
 
 - (IBAction)onClickedButtonAction:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    LIST_TYPE type;
-    if (sender.selected) {
-        type = LIST_TYPE_COLLECTION;
+    if (sender == _btnListType) {
+        sender.selected = !sender.selected;
+        LIST_TYPE type;
+        if (sender.selected) {
+            type = LIST_TYPE_COLLECTION;
+        }
+        else {
+            type = LIST_TYPE_TABLE;
+        }
+        
+        if ([self.delegate respondsToSelector:@selector(changedListType:)]) {
+            [_delegate changedListType:type];
+        }
     }
-    else {
-        type = LIST_TYPE_TABLE;
-    }
-    
-    if ([self.delegate respondsToSelector:@selector(searchBar:changedListType:)]) {
-        [_delegate searchBar:self changedListType:type];
+    else if (sender == _btnSort) {
+        if ([self.delegate respondsToSelector:@selector(didclickedSort)]) {
+            [_delegate didclickedSort];
+        }
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ([self.delegate respondsToSelector:@selector(searchBar:textFieldShouldReturn:)]) {
-        return [_delegate searchBar:self textFieldShouldReturn:textField];
+    if ([self.delegate respondsToSelector:@selector(textFieldShouldReturn:)]) {
+        return [_delegate textFieldShouldReturn:textField];
     }
     return YES;
 }

@@ -20,8 +20,32 @@
 @implementation CustomNavigationController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.tintColor = [UIColor whiteColor];
+
     [self setRootViewController];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (@available (iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        [appearance configureWithOpaqueBackground];
+        appearance.backgroundColor = COLOR_APP_DEFAULT;
+        appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+        
+        UIBarButtonItemAppearance *buttonAppearance = [[UIBarButtonItemAppearance alloc] init];
+        buttonAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+        appearance.buttonAppearance = buttonAppearance;
+        
+        UINavigationBar.appearance.standardAppearance = appearance;
+        UINavigationBar.appearance.scrollEdgeAppearance = appearance;
+        UINavigationBar.appearance.compactAppearance = appearance;
+    }
+    else {
+        UINavigationBar.appearance.barTintColor = COLOR_APP_DEFAULT;
+        UINavigationBar.appearance.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+        UINavigationBar.appearance.tintColor = [UIColor whiteColor];
+        UIBarButtonItem.appearance.tintColor = [UIColor whiteColor];
+    }
 }
 - (void)willMoveToParentViewController:(UIViewController *)parent {
     [super willMoveToParentViewController:parent];
@@ -63,6 +87,7 @@
     else {
         HomeViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeViewController"];
         viewCtrl = vc;
+        vc.title = NSLocalizedString(@"home", nil);
         self.curRootId = RootIdHome;
     }
     

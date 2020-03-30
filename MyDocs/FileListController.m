@@ -12,12 +12,16 @@
 #import "FileCollectionCell.h"
 #import "AppDelegate.h"
 #import "DBManager.h"
+#import "Utility.h"
+#import "SortPopupView.h"
+#import "CBarButtonItem.h"
 
 @interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, SearchBarDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgSearchView;
 @property (weak, nonatomic) IBOutlet UIView *bgListView;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) SortPopupView *sortView;
 
 @property (nonatomic, strong) SearchBar *searchBar;
 @property (nonatomic, strong) NSArray *arrData;
@@ -41,8 +45,8 @@
     [_collectionView registerNib:[UINib nibWithNibName:@"FileCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"FileCollectionCell"];
     _tblView.rowHeight = UITableViewAutomaticDimension;
     _tblView.estimatedRowHeight = 60.0f;
-    __weak typeof(self)weakSelf = self;
     
+    __weak typeof(self)weakSelf = self;
     [_tblView bindHeadRefreshHandler:^{
         [weakSelf requestData];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -55,12 +59,12 @@
             [weakSelf.collectionView.headRefreshControl endRefreshing];
         });
     } themeColor:COLOR_APP_DEFAULT refreshStyle:KafkaRefreshStyleReplicatorCircle];
-    
-    
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[AppDelegate instance].toolBarViewController addTouchUpInsideAction:self selector:@selector(onClickedButtonActions:)];
+    [self makeSortView];
     [self requestData];
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -72,6 +76,47 @@
 }
 - (void)didMoveToParentViewController:(UIViewController *)parent {
     [super didMoveToParentViewController:parent];
+}
+- (void)makeSortView {
+    if (_sortView) {
+        [_sortView removeFromSuperview];
+    }
+    
+    self.sortView = [[NSBundle mainBundle] loadNibNamed:@"SortPopupView" owner:self options:nil].firstObject;
+    [self.view addSubview:_sortView];
+    _sortView.translatesAutoresizingMaskIntoConstraints = NO;
+    [_sortView.widthAnchor constraintEqualToConstant:145].active = YES;
+    [_sortView.heightAnchor constraintEqualToConstant:190].active = YES;
+    [_sortView.topAnchor constraintEqualToAnchor:_bgListView.topAnchor].active = YES;
+    [_sortView.leadingAnchor constraintEqualToAnchor:_bgListView.leadingAnchor constant:10].active = YES;
+    
+    _sortView.layer.cornerRadius = 10.0f;
+    _sortView.layer.borderColor = RGB(28, 71, 178).CGColor;
+    _sortView.layer.borderWidth = 1.0f;
+    _sortView.hidden = YES;
+    
+    __weak typeof(self)weakSelf = self;
+    [_sortView setOnClickedTouchUpInside:^(FILE_SORT_TYPE sortType) {
+        weakSelf.sortType = sortType;
+        [weakSelf makeSortData];
+    }];
+}
+- (void)makeSortData {
+    if (_sortType == FILE_SORT_TYPE_NAME) {
+        NSLog(@"sort name");
+    }
+    else if (_sortType == FILE_SORT_TYPE_SIZE) {
+        NSLog(@"sort size");
+    }
+    else if (_sortType == FILE_SORT_TYPE_CREATE_DATE) {
+        NSLog(@"sort create date");
+    }
+    else if (_sortType == FILE_SORT_TYPE_MODI_DATE) {
+        NSLog(@"sort modification date");
+    }
+    else if (_sortType == FILE_SORT_TYPE_ITEM_COUNT) {
+        NSLog(@"sort item count");
+    }
 }
 
 - (void)requestData {
@@ -113,7 +158,10 @@
 
 - (IBAction)onClickedButtonActions:(UIButton *)sender {
     
-    if (sender.tag == TAG_TOOL_BTN_SELECT) {
+    if (sender.tag == TAG_NAVI_ITEM_BACK) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+    else if (sender.tag == TAG_TOOL_BTN_SELECT) {
         sender.selected = !sender.selected;
         if (sender.selected) {
             [AppDelegate instance].toolBarViewController.type = ToolBarTypeDelete;
@@ -163,16 +211,25 @@
         [self requestData];
     }
 }
+- (void)notiHitViewAction:(NSNotification *)notification {
+
+    [self.view endEditing:YES];
+    if (_sortView.hidden == NO) {
+        _sortView.hidden = YES;
+    }
+}
 #pragma mark SearchBarDelegate
-- (void)searchBar:(id)searchBar changedListType:(LIST_TYPE)listType {
+- (void)changedListType:(LIST_TYPE)listType {
     self.listType = listType;
 }
-- (void)searchBar:(id)searchBar editingChangedString:(NSString *)text {
+- (void)editingChangedString:(NSString *)text {
     
 }
-- (BOOL)searchBar:(id)searchBar textFieldShouldReturn:(UITextField *)textFiled {
-    
+- (BOOL)textFieldShouldReturn:(UITextField *)textFiled {
     return YES;
+}
+- (void)didclickedSort {
+    _sortView.hidden = NO;
 }
 
 //MARK::UITableViewDataSource, UITableViewDelegate

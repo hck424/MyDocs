@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 #import "AppDelegate.h"
+#import "CBarButtonItem.h"
+
 @interface BaseViewController ()
 
 @end
@@ -17,15 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-}
 
 - (void)viewWillAppear:(BOOL)animated {
+    if([self.navigationController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    }
+    else {
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    }
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiHitViewAction:) name:NotiNameHitTestView object:nil];
 }
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NotiNameHitTestView object:nil];

@@ -16,11 +16,9 @@ typedef NS_ENUM(NSUInteger, TAG_NAVI_ITEM) {
 @property (nonatomic, strong) UIColor  *toolBarTintColor;
 @property (nonatomic, strong) UIColor *toolTintColor;
 
-+ (void)naviTitle:(UIViewController *)controller title:(NSString *)title isLeft:(BOOL)isLeft;
++ (void)naviTitle:(UIViewController *)controller title:(NSString *)title;
 + (void)naviBackBtn:(UIViewController *)controller action:(SEL)action;
 
-+ (void)naviLeftBarButtons:(UIViewController *)controller images:(UIImage *)images tags:(NSArray *)tags action:(SEL)action;
-+ (void)naviLeftBarButtons:(UIViewController *)controller titles:(NSString *)titles tags:(NSArray *)tags action:(SEL)action;
 
 + (void)naviRightBarButtons:(UIViewController *)controller imgName:(UIImage *)imgName tags:(NSArray *)tags action:(SEL)action;
 + (void)naviRightBarButtons:(UIViewController *)controller titles:(NSString *)titles tags:(NSArray *)tags action:(SEL)action;

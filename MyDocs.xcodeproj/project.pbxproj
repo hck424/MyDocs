@@ -51,6 +51,10 @@
 		E9D90BDA240E56B6006AAAF2 /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D90BD9240E56B6006AAAF2 /* HitTestView.m */; };
 		E9E5B6E5242C6D0E006EE173 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5B6E4242C6D0E006EE173 /* DBManager.m */; };
 		E9E5B6E8242C722E006EE173 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5B6E7242C722E006EE173 /* Item.m */; };
+		E9ED85BB2431ADBB00397C86 /* BGStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ED85BA2431ADBB00397C86 /* BGStackView.m */; };
+		E9ED85BE2431B82500397C86 /* CButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ED85BD2431B82500397C86 /* CButton.m */; };
+		E9ED85C12431BA7800397C86 /* SortPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ED85C02431BA7800397C86 /* SortPopupView.m */; };
+		E9ED85C32431BA8100397C86 /* SortPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9ED85C22431BA8100397C86 /* SortPopupView.xib */; };
 		E9F5ECF2242365590093B878 /* ToolBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5ECF1242365590093B878 /* ToolBarViewController.m */; };
 		E9F5ECF5242365660093B878 /* AdViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5ECF4242365660093B878 /* AdViewViewController.m */; };
 		E9FCF46A240F313800C0A385 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF469240F313800C0A385 /* SearchBar.m */; };
@@ -143,6 +147,13 @@
 		E9E5B6E4242C6D0E006EE173 /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		E9E5B6E6242C722E006EE173 /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		E9E5B6E7242C722E006EE173 /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		E9ED85B92431ADBB00397C86 /* BGStackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGStackView.h; sourceTree = "<group>"; };
+		E9ED85BA2431ADBB00397C86 /* BGStackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGStackView.m; sourceTree = "<group>"; };
+		E9ED85BC2431B82500397C86 /* CButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
+		E9ED85BD2431B82500397C86 /* CButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CButton.m; sourceTree = "<group>"; };
+		E9ED85BF2431BA7800397C86 /* SortPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SortPopupView.h; sourceTree = "<group>"; };
+		E9ED85C02431BA7800397C86 /* SortPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SortPopupView.m; sourceTree = "<group>"; };
+		E9ED85C22431BA8100397C86 /* SortPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPopupView.xib; sourceTree = "<group>"; };
 		E9F5ECF0242365590093B878 /* ToolBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolBarViewController.h; sourceTree = "<group>"; };
 		E9F5ECF1242365590093B878 /* ToolBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolBarViewController.m; sourceTree = "<group>"; };
 		E9F5ECF3242365660093B878 /* AdViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdViewViewController.h; sourceTree = "<group>"; };
@@ -369,6 +380,13 @@
 				E9FCF46B240F314F00C0A385 /* SearchBar.xib */,
 				E9FCF475240F3DFE00C0A385 /* CBarButtonItem.h */,
 				E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */,
+				E9ED85B92431ADBB00397C86 /* BGStackView.h */,
+				E9ED85BA2431ADBB00397C86 /* BGStackView.m */,
+				E9ED85BC2431B82500397C86 /* CButton.h */,
+				E9ED85BD2431B82500397C86 /* CButton.m */,
+				E9ED85BF2431BA7800397C86 /* SortPopupView.h */,
+				E9ED85C02431BA7800397C86 /* SortPopupView.m */,
+				E9ED85C22431BA8100397C86 /* SortPopupView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -473,6 +491,7 @@
 				E9D90B79240E2F77006AAAF2 /* Main.storyboard in Resources */,
 				E96E4555242314750092256B /* Other.storyboard in Resources */,
 				E9FCF46C240F314F00C0A385 /* SearchBar.xib in Resources */,
+				E9ED85C32431BA8100397C86 /* SortPopupView.xib in Resources */,
 				E96E454F242310900092256B /* OneDrive.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +547,7 @@
 			files = (
 				E9D90B76240E2F77006AAAF2 /* MainViewController.m in Sources */,
 				E9D90BD1240E3A6E006AAAF2 /* BaseViewController.m in Sources */,
+				E9ED85BB2431ADBB00397C86 /* BGStackView.m in Sources */,
 				E96E4558242314980092256B /* FileListController.m in Sources */,
 				E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */,
 				E9D90BC9240E39A9006AAAF2 /* UIViewController+Utility.m in Sources */,
@@ -552,9 +572,11 @@
 				E9D90BA3240E35A2006AAAF2 /* RightTableViewController.m in Sources */,
 				E9F5ECF2242365590093B878 /* ToolBarViewController.m in Sources */,
 				E9D90BA6240E35D1006AAAF2 /* RootNavigationController.m in Sources */,
+				E9ED85C12431BA7800397C86 /* SortPopupView.m in Sources */,
 				E9D90BA2240E35A2006AAAF2 /* LeftTableViewController.m in Sources */,
 				E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */,
 				E9D90B97240E3101006AAAF2 /* TutorialViewController.m in Sources */,
+				E9ED85BE2431B82500397C86 /* CButton.m in Sources */,
 				E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */,
 				E9D90BCC240E39CB006AAAF2 /* LanguageInfo.m in Sources */,
 				E96E4562242348D80092256B /* FileCollectionCell.m in Sources */,

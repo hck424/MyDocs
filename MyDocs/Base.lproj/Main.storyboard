@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,6 @@
         <scene sceneID="yzy-1C-2Zb">
             <objects>
                 <navigationController storyboardIdentifier="RootNavigationController" navigationBarHidden="YES" id="8g9-1o-X8g" customClass="RootNavigationController" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hNu-hq-2wT">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -96,7 +95,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ey-Yw-vem" customClass="VerticalButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="43"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
@@ -117,7 +116,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBu-9R-uaD" customClass="VerticalButton">
-                                                <rect key="frame" x="120" y="0.0" width="120" height="43"/>
+                                                <rect key="frame" x="150" y="0.0" width="150" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
@@ -137,29 +136,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="remove"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT2-Xr-co1" customClass="VerticalButton">
-                                                <rect key="frame" x="240" y="0.0" width="120" height="43"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Sort" image="icon_descending_sorting">
-                                                    <color key="titleColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="imgWidth">
-                                                        <real key="value" value="25"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="imgHeight">
-                                                        <real key="value" value="25"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="space">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="sort"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAf-zo-erC" customClass="VerticalButton">
-                                                <rect key="frame" x="360" y="0.0" width="120" height="43"/>
+                                                <rect key="frame" x="300" y="0.0" width="150" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
@@ -180,7 +158,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ine-CY-pW8" customClass="VerticalButton">
-                                                <rect key="frame" x="480" y="0.0" width="120" height="43"/>
+                                                <rect key="frame" x="450" y="0.0" width="150" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
@@ -226,7 +204,6 @@
                         <outlet property="btnNewFolder" destination="VAf-zo-erC" id="OTU-ER-koH"/>
                         <outlet property="btnRemove" destination="hBu-9R-uaD" id="FBl-uq-toO"/>
                         <outlet property="btnSelect" destination="9ey-Yw-vem" id="7vh-xu-S0X"/>
-                        <outlet property="btnSort" destination="qT2-Xr-co1" id="zus-i3-tqV"/>
                         <outlet property="svContent" destination="EJe-Vq-u3f" id="NG8-vC-396"/>
                     </connections>
                 </viewController>
@@ -553,6 +530,9 @@
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRz-Kq-akg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -563,7 +543,6 @@
     <resources>
         <image name="icon_add_file" width="22" height="22"/>
         <image name="icon_add_folder" width="22" height="22"/>
-        <image name="icon_descending_sorting" width="22" height="22"/>
         <image name="icon_support" width="22" height="22"/>
         <image name="icon_trash_can" width="22" height="22"/>
     </resources>

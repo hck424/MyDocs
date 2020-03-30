@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,11 +13,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M7x-SQ-wbZ">
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M7x-SQ-wbZ">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5E-Ba-Kin">
+                            <rect key="frame" x="0.0" y="14" width="46" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="9pO-IZ-IsI"/>
+                            </constraints>
+                            <state key="normal" image="icon_descending_sorting">
+                                <color key="titleColor" red="0.043137254899999998" green="0.066666666669999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="pu6-Du-9Km"/>
+                            </connections>
+                        </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bB6-56-yUY" customClass="CTextField">
-                            <rect key="frame" x="20" y="10" width="333" height="30"/>
+                            <rect key="frame" x="46" y="10" width="322" height="30"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Miu-DY-5dY"/>
@@ -61,7 +73,7 @@
                             </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-60-ROy">
-                            <rect key="frame" x="358" y="14" width="46" height="22"/>
+                            <rect key="frame" x="368" y="14" width="46" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="46" id="CeU-ff-99P"/>
                             </constraints>
@@ -74,7 +86,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="10"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,6 +98,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnListType" destination="vwH-60-ROy" id="vbf-qN-XLV"/>
+                <outlet property="btnSort" destination="g5E-Ba-Kin" id="61r-QK-Ajz"/>
                 <outlet property="tfSearch" destination="bB6-56-yUY" id="Wb9-5W-Edj"/>
             </connections>
             <point key="canvasLocation" x="-13" y="44"/>
@@ -94,6 +106,7 @@
     </objects>
     <resources>
         <image name="icon_bulleted_list" width="22" height="22"/>
+        <image name="icon_descending_sorting" width="22" height="22"/>
         <image name="icon_squared_menu" width="22" height="22"/>
     </resources>
 </document>

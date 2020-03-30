@@ -17,3 +17,8 @@
 "ok" = "Ok";
 "cancel" = "Cancel";
 "create_new_folder_des" = "Please enter a new folder name.";
+"name" = "Name";
+"size" = "Size";
+"create_date" = "Create Date";
+"modification_date" = "Modification Date";
+"item_count" = "Item Count";

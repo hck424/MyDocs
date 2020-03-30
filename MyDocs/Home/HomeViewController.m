@@ -10,6 +10,7 @@
 #import "UIView+Utility.h"
 #import "FCFileManager.h"
 #import "FileListController.h"
+#import "CBarButtonItem.h"
 
 @interface HomeViewController () <SearchBarDelegate>
 
@@ -34,8 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.title = NSLocalizedString(@"home", @"");
-    
+    self.title = NSLocalizedString(@"home", nil);
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -43,8 +43,8 @@
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *destinateVC = segue.destinationViewController;
     if ([destinateVC isKindOfClass:[FileListController class]]) {

@@ -17,3 +17,8 @@
 "ok" = "확인";
 "cancel" = "취소";
 "create_new_folder_des" = "새폴더 이름을 입력해주세요.";
+"name" = "이름";
+"size" = "크기";
+"create_date" = "생성일";
+"modification_date" = "변경일";
+"item_count" = "파일 개수";

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Sy-ZB-ZbG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Sy-ZB-ZbG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,6 +26,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2Q-Cu-qcF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="k1F-0f-lR4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QzL-cj-34b">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -36,34 +40,19 @@
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="d2n-2A-kAz">
-                                                <rect key="frame" x="0.0" y="0.0" width="93" height="103"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mJn-KQ-8de">
-                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="103"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                                <size key="customSize" width="93" height="103"/>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
                                     </collectionView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="k1F-0f-lR4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="8ME-Ox-22A"/>
-                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="Esj-x4-7Tl"/>
+                                    <constraint firstAttribute="trailing" secondItem="k1F-0f-lR4" secondAttribute="trailing" id="CIb-MX-Pga"/>
+                                    <constraint firstAttribute="bottom" secondItem="k1F-0f-lR4" secondAttribute="bottom" id="QRt-yE-RLb"/>
                                     <constraint firstItem="QzL-cj-34b" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="Rrx-Cu-e9p"/>
-                                    <constraint firstAttribute="bottom" secondItem="k1F-0f-lR4" secondAttribute="bottom" id="SqV-kG-oQ1"/>
                                     <constraint firstAttribute="bottom" secondItem="QzL-cj-34b" secondAttribute="bottom" id="WVc-So-eBT"/>
                                     <constraint firstAttribute="trailing" secondItem="QzL-cj-34b" secondAttribute="trailing" id="joZ-b5-Uee"/>
                                     <constraint firstItem="QzL-cj-34b" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="l4M-is-RSI"/>
-                                    <constraint firstAttribute="trailing" secondItem="k1F-0f-lR4" secondAttribute="trailing" id="v27-IY-VPm"/>
+                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="y3f-4j-tYj"/>
+                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="yf9-Ft-aM1"/>
                                 </constraints>
                             </view>
                         </subviews>

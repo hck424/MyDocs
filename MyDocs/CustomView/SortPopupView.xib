@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SortPopupView">
+            <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6it-9s-6OJ">
+                    <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQR-tF-i1M" customClass="CButton">
+                            <rect key="frame" x="0.0" y="0.0" width="145" height="35"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Name">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeText" value="name"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eW7-xK-0Qp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-id-i9j" customClass="CButton">
+                            <rect key="frame" x="0.0" y="36" width="145" height="35.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Size">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeText" value="size"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eep-FZ-5qe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPQ-Kh-xMQ" customClass="CButton">
+                            <rect key="frame" x="0.0" y="72.5" width="145" height="35"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Create Date">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeText" value="create_date"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="z22-jB-uIL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfg-oM-qMO" customClass="CButton">
+                            <rect key="frame" x="0.0" y="108.5" width="145" height="35.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Modification Date">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeText" value="modification_date"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nQm-Mg-yh9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4L-g0-Iuz" customClass="CButton">
+                            <rect key="frame" x="0.0" y="145" width="145" height="35"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Item Count">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeText" value="item_count"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="knK-Ie-UAG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.10980392160000001" green="0.2784313725" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstAttribute="top" secondItem="6it-9s-6OJ" secondAttribute="top" id="MP7-s3-3ot"/>
+                <constraint firstAttribute="bottom" secondItem="6it-9s-6OJ" secondAttribute="bottom" id="OeD-zU-P4z"/>
+                <constraint firstAttribute="trailing" secondItem="6it-9s-6OJ" secondAttribute="trailing" id="VrI-y3-Zyc"/>
+                <constraint firstAttribute="leading" secondItem="6it-9s-6OJ" secondAttribute="leading" id="yDU-Jg-orO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnItemCount" destination="D4L-g0-Iuz" id="FG1-va-i7q"/>
+                <outlet property="btnSortCreateDate" destination="XPQ-Kh-xMQ" id="2Ij-kk-fQy"/>
+                <outlet property="btnSortModiDate" destination="Mfg-oM-qMO" id="Vl6-pl-Gni"/>
+                <outlet property="btnSortName" destination="JQR-tF-i1M" id="3dD-vW-B5J"/>
+                <outlet property="btnSortSize" destination="vcd-id-i9j" id="hIx-ql-O19"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="242.41071428571428"/>
+        </view>
+    </objects>
+</document>

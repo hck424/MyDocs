@@ -15,13 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SearchBarDelegate  <NSObject>
 @optional
-- (void)searchBar:(id)searchBar editingChangedString:(NSString *)text;
-- (void)searchBar:(id)searchBar changedListType:(LIST_TYPE)listType;
-- (BOOL)searchBar:(id)searchBar textFieldShouldReturn:(UITextField *)textFiled;
+- (void)editingChangedString:(NSString *)text;
+- (BOOL)textFieldShouldReturn:(UITextField *)textFiled;
+
+- (void)didclickedSort;
+- (void)changedListType:(LIST_TYPE)listType;
+
 @end
 @interface SearchBar : UIView <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet CTextField *tfSearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnListType;
+@property (weak, nonatomic) IBOutlet UIButton *btnSort;
 @property (nonatomic, weak) id <SearchBarDelegate>delegate;
 @end
 
