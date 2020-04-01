@@ -15,6 +15,8 @@
 #import "Utility.h"
 #import "SortPopupView.h"
 #import "CBarButtonItem.h"
+#import "UIView+Toast.h"
+#import "CameraViewController.h"
 
 @interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, SearchBarDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgSearchView;
@@ -26,6 +28,7 @@
 @property (nonatomic, strong) SearchBar *searchBar;
 @property (nonatomic, strong) NSArray *arrData;
 @property (nonatomic, assign) FILE_SORT_TYPE sortType;
+@property (nonatomic, strong) NSMutableArray *arrSelectItem;
 @end
 
 @implementation FileListController
@@ -63,13 +66,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[AppDelegate instance].toolBarViewController addTouchUpInsideAction:self selector:@selector(onClickedButtonActions:)];
+    [[AppDelegate instance].toolBarViewController addTouchUpInsideAction:self selector:@selector(onClickedToolBarActions:)];
     [self makeSortView];
     [self requestData];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [[AppDelegate instance].toolBarViewController removeUpInsideAction:self selector:@selector(onClickedButtonActions:)];
+    [[AppDelegate instance].toolBarViewController removeUpInsideAction:self selector:@selector(onClickedToolBarActions:)];
 }
 - (void)willMoveToParentViewController:(UIViewController *)parent {
     [super willMoveToParentViewController:parent];
@@ -155,13 +158,8 @@
         [self reloadData];
     }
 }
-
-- (IBAction)onClickedButtonActions:(UIButton *)sender {
-    
-    if (sender.tag == TAG_NAVI_ITEM_BACK) {
-        [self.navigationController popViewControllerAnimated:NO];
-    }
-    else if (sender.tag == TAG_TOOL_BTN_SELECT) {
+- (void)onClickedToolBarActions:(UIButton *)sender {
+    if (sender.tag == TOOL_BAR_ACTION_SELECT) {
         sender.selected = !sender.selected;
         if (sender.selected) {
             [AppDelegate instance].toolBarViewController.type = ToolBarTypeDelete;
@@ -169,17 +167,18 @@
         else {
             [AppDelegate instance].toolBarViewController.type = ToolBarTypeDefault;
         }
+        [self reloadData];
     }
-    else if (sender.tag == TAG_TOOL_BTN_SORT) {
-        
+    else if (sender.tag == TOOL_BAR_ACTION_DELETE) {
+        NSLog(@"tool btn delete");
+        if (_arrSelectItem.count == 0) {
+            [self.view makeToast:NSLocalizedString(@"no_file_selected", nil) duration:0.3 position:CSToastPositionTop];
+        }
     }
-    else if (sender.tag == TAG_TOOL_BTN_DELETE) {
-        
+    else if (sender.tag == TOOL_BAR_ACTION_ADDFILES) {
+        NSLog(@"tool btn newfile");
     }
-    else if (sender.tag == TAG_TOOL_BTN_ADDFILES) {
-        
-    }
-    else if (sender.tag == TAG_TOOL_BTN_NEWFOLDER) {
+    else if (sender.tag == TOOL_BAR_ACTION_NEWFOLDER) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"new_folder", nil) message:@"" preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -203,7 +202,35 @@
         
         [[AppDelegate instance].rootNavigationController presentViewController:alert animated:YES completion:nil];
     }
+    else if (sender.tag == TOOL_BAR_ACTION_CAMERA) {
+        NSLog(@"tool btn camera");
+        CameraViewController *vc = [[CameraViewController alloc] init];
+        vc.soureType = UIImagePickerControllerSourceTypeCamera;
+        [[AppDelegate instance].rootNavigationController pushViewController:vc animated:NO];
+    }
+    else if (sender.tag == TOOL_BAR_ACTION_PHOTO) {
+        NSLog(@"tool btn photo libary");
+    }
+    else if (sender.tag == TOOL_BAR_ACTION_ADD_SONG) {
+        NSLog(@"tool btn add songs");
+    }
+    else if (sender.tag == TOOL_BAR_ACTION_SHARE) {
+        NSLog(@"tool btn share");
+    }
+    else if (sender.tag == TOOL_BAR_ACTION_CLOUD_UPLOAD) {
+        NSLog(@"tool btn cloud upload");
+    }
+    else if (sender.tag == TOOL_BAR_ACTION_CLOUD_DOWNLOAD) {
+        NSLog(@"tool btn cloud download");
+    }
 }
+- (IBAction)onClickedButtonActions:(UIButton *)sender {
+    
+    if (sender.tag == TAG_NAVI_ITEM_BACK) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+}
+
 - (void)createNewFolder:(NSString *)folderName {
     NSString *path = [NSString stringWithFormat:@"%@/%@", _rootPath, folderName];
     BOOL success = [FCFileManager createDirectoriesForPath:path];
@@ -211,6 +238,7 @@
         [self requestData];
     }
 }
+
 - (void)notiHitViewAction:(NSNotification *)notification {
 
     [self.view endEditing:YES];
@@ -243,7 +271,26 @@
     }
     
     Item *item = [_arrData objectAtIndex:indexPath.row];
-    [cell configurationData:item sortType:_sortType];
+    
+    ToolBarType type = [AppDelegate instance].toolBarViewController.type;
+    if (type == ToolBarTypeDefault) {
+        [cell configurationData:item sortType:_sortType cellType:CELL_TYPE_DEFAULT];
+    }
+    else {
+        [cell configurationData:item sortType:_sortType cellType:CELL_TYPE_SELECTION];
+    }
+    
+    [cell setOnClickedTouchUpInside:^(UIButton * _Nonnull sender, Item * _Nonnull item) {
+        if (self.arrSelectItem == nil) {
+            self.arrSelectItem = [NSMutableArray array];
+        }
+        if (sender.selected) {
+            [self.arrSelectItem addObject:item];
+        }
+        else {
+            [self.arrSelectItem removeObject:item];
+        }
+    }];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

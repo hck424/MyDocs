@@ -12,7 +12,7 @@
 "sort" = "Sort";
 "new_folder" = "New Folder";
 "add_files" = "Add Files";
-"remove" = "Remove";
+"delete" = "Delete";
 "referal_count" = "%d items";
 "ok" = "Ok";
 "cancel" = "Cancel";
@@ -22,3 +22,15 @@
 "create_date" = "Create Date";
 "modification_date" = "Modification Date";
 "item_count" = "Item Count";
+"camera" = "Camera";
+"cloud_upload" = "Upload";
+"share" = "Share";
+"no_file_selected" = "No file selected.";
+"copy" = "Copy";
+"move" = "Move";
+"photo_libray" = "Photo";
+"add_song" = "Songs";
+"cloud_download" = "Download";
+"exit"="Exit";
+"timer"="Timer";
+"sound"="Sound";

@@ -92,7 +92,7 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.tintColor = [UIColor whiteColor];
-    [btn setImage:[UIImage imageNamed:@"icon_back"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [btn setTitle:@"Back" forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:17.0 weight:UIFontWeightSemibold];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

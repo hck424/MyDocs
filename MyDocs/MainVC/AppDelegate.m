@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "KafkaRefresh.h"
 #import "LanguageInfo.h"
+#import "AudioListener.h"
 
 @interface AppDelegate ()
 
@@ -29,7 +30,7 @@
     
     NSString *countryCode = UserCountryCode;
     if (countryCode.length == 0) {
-        countryCode = @"US";
+        countryCode = @"KR";
         [[NSUserDefaults standardUserDefaults] setObject:countryCode forKey:@"USER_COUNTRY_CODE"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -49,6 +50,7 @@
         }
     }
     
+    [AudioListener sharedInstance];
     return YES;
 }
 
@@ -65,6 +67,19 @@
     self.window.rootViewController = _mainViewController;
     [_mainViewController setupWithType:1];
     [self.window makeKeyAndVisible];
+}
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
+//    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
+    if (_restrictRotation) {
+        return UIInterfaceOrientationMaskLandscape;
+    }
+    else {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+    
 }
 #pragma mark - UISceneSession lifecycle
 

@@ -7,4 +7,5 @@ target 'MyDocs' do
   pod 'LGSideMenuController'
   pod 'FCFileManager'
   pod 'KafkaRefresh'
+  pod 'Toast', '~> 4.0.0'
 end

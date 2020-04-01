@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ehQ-jP-S0g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ehQ-jP-S0g">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,12 +11,12 @@
         <scene sceneID="gRo-uA-hnz">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ehQ-jP-S0g" customClass="HomeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="USH-JG-W9N">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="USH-JG-W9N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-Ud-qZ2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <segue destination="VUQ-Wf-T7r" kind="embed" id="lVb-Cd-EaB"/>
                                 </connections>
@@ -25,12 +24,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HDT-1o-7VE" firstAttribute="trailing" secondItem="0HR-Ud-qZ2" secondAttribute="trailing" id="EpB-Up-UQd"/>
-                            <constraint firstItem="0HR-Ud-qZ2" firstAttribute="top" secondItem="HDT-1o-7VE" secondAttribute="top" id="Fox-b6-PnK"/>
-                            <constraint firstItem="0HR-Ud-qZ2" firstAttribute="leading" secondItem="HDT-1o-7VE" secondAttribute="leading" id="jpX-BX-aDz"/>
+                            <constraint firstAttribute="trailing" secondItem="0HR-Ud-qZ2" secondAttribute="trailing" id="EpB-Up-UQd"/>
+                            <constraint firstItem="0HR-Ud-qZ2" firstAttribute="top" secondItem="USH-JG-W9N" secondAttribute="top" id="Fox-b6-PnK"/>
+                            <constraint firstItem="0HR-Ud-qZ2" firstAttribute="leading" secondItem="USH-JG-W9N" secondAttribute="leading" id="jpX-BX-aDz"/>
                             <constraint firstAttribute="bottom" secondItem="0HR-Ud-qZ2" secondAttribute="bottom" identifier="CB" id="toL-GF-7aP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HDT-1o-7VE"/>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>

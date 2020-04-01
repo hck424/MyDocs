@@ -18,9 +18,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjP-Fe-PB5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cwp-Wv-dFi"/>
+                                    <constraint firstAttribute="height" constant="44" id="zDo-n5-2yX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2Q-Cu-qcF">
@@ -45,28 +45,28 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="k1F-0f-lR4" secondAttribute="trailing" id="CIb-MX-Pga"/>
-                                    <constraint firstAttribute="bottom" secondItem="k1F-0f-lR4" secondAttribute="bottom" id="QRt-yE-RLb"/>
-                                    <constraint firstItem="QzL-cj-34b" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="Rrx-Cu-e9p"/>
-                                    <constraint firstAttribute="bottom" secondItem="QzL-cj-34b" secondAttribute="bottom" id="WVc-So-eBT"/>
-                                    <constraint firstAttribute="trailing" secondItem="QzL-cj-34b" secondAttribute="trailing" id="joZ-b5-Uee"/>
-                                    <constraint firstItem="QzL-cj-34b" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="l4M-is-RSI"/>
-                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="y3f-4j-tYj"/>
-                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="yf9-Ft-aM1"/>
+                                    <constraint firstItem="QzL-cj-34b" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="T1i-y0-gKh"/>
+                                    <constraint firstAttribute="trailing" secondItem="QzL-cj-34b" secondAttribute="trailing" id="Tts-dT-n9r"/>
+                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="top" secondItem="f2Q-Cu-qcF" secondAttribute="top" id="cbd-yd-jua"/>
+                                    <constraint firstAttribute="bottom" secondItem="k1F-0f-lR4" secondAttribute="bottom" id="eVy-KQ-DbE"/>
+                                    <constraint firstItem="QzL-cj-34b" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="jxt-4B-gjt"/>
+                                    <constraint firstAttribute="trailing" secondItem="k1F-0f-lR4" secondAttribute="trailing" id="pxq-9y-W2R"/>
+                                    <constraint firstItem="k1F-0f-lR4" firstAttribute="leading" secondItem="f2Q-Cu-qcF" secondAttribute="leading" id="sXd-rQ-2cr"/>
+                                    <constraint firstAttribute="bottom" secondItem="QzL-cj-34b" secondAttribute="bottom" id="v8d-70-YON"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="63O-Bt-Dt6" firstAttribute="trailing" secondItem="YjP-Fe-PB5" secondAttribute="trailing" id="06q-pe-2T9"/>
-                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="bottom" secondItem="8Qn-zf-vKD" secondAttribute="bottom" id="3O4-KL-4Vk"/>
-                            <constraint firstItem="YjP-Fe-PB5" firstAttribute="top" secondItem="63O-Bt-Dt6" secondAttribute="top" id="Gxt-vE-EFT"/>
-                            <constraint firstItem="YjP-Fe-PB5" firstAttribute="leading" secondItem="63O-Bt-Dt6" secondAttribute="leading" id="WQO-10-9mh"/>
-                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="trailing" secondItem="63O-Bt-Dt6" secondAttribute="trailing" id="mgf-6N-1ed"/>
-                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="top" secondItem="YjP-Fe-PB5" secondAttribute="bottom" id="tGz-qP-hOZ"/>
-                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="leading" secondItem="63O-Bt-Dt6" secondAttribute="leading" id="uPd-1W-tRM"/>
+                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="trailing" secondItem="l1J-ku-MWa" secondAttribute="trailing" id="7Ao-zI-jTA"/>
+                            <constraint firstItem="YjP-Fe-PB5" firstAttribute="trailing" secondItem="8Qn-zf-vKD" secondAttribute="trailing" id="9ma-uU-gka"/>
+                            <constraint firstItem="YjP-Fe-PB5" firstAttribute="top" secondItem="l1J-ku-MWa" secondAttribute="top" id="E6X-A9-KX7"/>
+                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="leading" secondItem="l1J-ku-MWa" secondAttribute="leading" id="NxW-Cr-saH"/>
+                            <constraint firstItem="f2Q-Cu-qcF" firstAttribute="top" secondItem="YjP-Fe-PB5" secondAttribute="bottom" id="bzS-qM-xZo"/>
+                            <constraint firstAttribute="bottom" secondItem="f2Q-Cu-qcF" secondAttribute="bottom" id="fvy-0O-mnv"/>
+                            <constraint firstItem="YjP-Fe-PB5" firstAttribute="leading" secondItem="8Qn-zf-vKD" secondAttribute="leading" id="wjE-Ei-osE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="63O-Bt-Dt6"/>
+                        <viewLayoutGuide key="safeArea" id="l1J-ku-MWa"/>
                     </view>
                     <connections>
                         <outlet property="bgListView" destination="f2Q-Cu-qcF" id="k2X-kZ-AvT"/>

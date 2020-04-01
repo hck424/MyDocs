@@ -30,7 +30,7 @@
 }
 - (void)makeSectionData {
     
-    NSDictionary *itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"icon_home"], @"image", NSLocalizedString(@"home", @""), @"title", RootIdHome, @"rootId", nil];
+    NSDictionary *itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"home"], @"image", NSLocalizedString(@"home", @""), @"title", RootIdHome, @"rootId", nil];
 
     [_arrData addObject:[NSArray arrayWithObject:itemDic]];
   
@@ -53,7 +53,7 @@
     [_arrData addObject:arrSec];
     
     if (@available(iOS 13.0, *)) {
-        itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"icon_language"], @"image",
+        itemDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"language"], @"image",
                    NSLocalizedString(@"language", @""), @"title", nil];
     }
     [_arrData addObject:[NSArray arrayWithObject:itemDic]];

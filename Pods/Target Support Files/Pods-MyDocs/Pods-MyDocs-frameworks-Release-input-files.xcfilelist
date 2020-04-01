@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-MyDocs/Pods-MyDocs-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/FCFileManager/FCFileManager.framework
 ${BUILT_PRODUCTS_DIR}/KafkaRefresh/KafkaRefresh.framework
 ${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework
+${BUILT_PRODUCTS_DIR}/Toast/Toast.framework

@@ -20,6 +20,7 @@
 @property (nonatomic, strong) MainViewController *mainViewController;
 @property (nonatomic, strong) CustomNavigationController *customNavigationController;
 @property (nonatomic, strong) ToolBarViewController *toolBarViewController;
+@property (nonatomic, assign) BOOL restrictRotation;
 + (AppDelegate *)instance;
 
 - (RootNavigationController *)rootNavigationController;

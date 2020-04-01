@@ -30,5 +30,5 @@
 #define UserLocalIdentifier [[NSUserDefaults standardUserDefaults] objectForKey:@"LOCAL_IDENTIFIER"]
 #define COLOR_APP_DEFAULT RGB(28, 71, 178)
 
-
+#define NotiNameDeviceOrientation @"NotiNameDeviceOrientation"
 #endif /* PrefixHeader_pch */

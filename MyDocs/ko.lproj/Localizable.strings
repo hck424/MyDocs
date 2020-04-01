@@ -12,7 +12,7 @@
 "sort" = "정렬";
 "new_folder" = "새 폴더";
 "add_files" = "새 파일";
-"remove" = "삭제";
+"delete" = "삭제";
 "referal_count" = "%d 개";
 "ok" = "확인";
 "cancel" = "취소";
@@ -22,3 +22,15 @@
 "create_date" = "생성일";
 "modification_date" = "변경일";
 "item_count" = "파일 개수";
+"camera" = "카메라";
+"cloud_upload" = "업로드";
+"share" = "공유";
+"no_file_selected" = "선택된 파일이 없습니다.";
+"copy" = "복사";
+"move" = "이동";
+"photo_libray" = "캘러리";
+"add_song" = "노래";
+"cloud_download" = "다운로드";
+"exit"="나가기";
+"timer"="타임";
+"sound"="소리";

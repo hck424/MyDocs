@@ -19,6 +19,5 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable CGFloat shadowRadius;
 @property (nonatomic, assign) IBInspectable CGFloat shadowOpacity;
 
-
 @end
 

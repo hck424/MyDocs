@@ -1,1 +1,3 @@
 "CFBundleDisplayName" = "내 문서" ;
+"NSCameraUsageDescription" = "카메라 접근을 허용해주세요.";
+"NSPhotoLibraryUsageDescription" = "사진앨범 접근을 허용해주세요.";
