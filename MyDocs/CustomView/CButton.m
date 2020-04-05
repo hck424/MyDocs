@@ -7,46 +7,70 @@
 //
 
 #import "CButton.h"
-
+#import "Utility.h"
+#import <QuartzCore/QuartzCore.h>
+@interface CButton ()
+@property (nonatomic, strong) CAShapeLayer *subLayer;
+@property (nonatomic, strong) UIColor *bgColor;
+@end
 @implementation CButton
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self decorationComponent];
+}
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     
-    if (_localizeText.length > 0) {
-        [self setTitle:NSLocalizedString(_localizeText, @"") forState:UIControlStateNormal];
-        [self setTitle:NSLocalizedString(_localizeText, @"") forState:UIControlStateHighlighted];
-        [self setTitle:NSLocalizedString(_localizeText, @"") forState:UIControlStateSelected];
-    }
-    else {
-        [self setTitle:@"" forState:UIControlStateNormal];
-        [self setTitle:@"" forState:UIControlStateHighlighted];
-        [self setTitle:@"" forState:UIControlStateSelected];
-    }
-    
-    if (_borderWidth > 0 && _borderColor != nil) {
-        self.layer.borderWidth = _borderWidth;
-        self.layer.borderColor = _borderColor.CGColor;
-    }
-
-    if (_cornerRadius > 0) {
-        self.clipsToBounds = YES;
-        self.layer.cornerRadius = _cornerRadius;
-    }
-    
-    if (_shadowColor != nil) {
-        CAShapeLayer *subLayer = [[CAShapeLayer alloc] init];
-        subLayer.path = [[UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.layer.cornerRadius] CGPath];
-        subLayer.fillColor = [UIColor whiteColor].CGColor;
-        self.layer.masksToBounds = NO;
-        
-        subLayer.shadowOffset = _shadowOffset;
-        subLayer.shadowColor = _shadowColor.CGColor;
-        subLayer.shadowRadius = _shadowRadius;
-        subLayer.shadowOpacity = _shadowOpacity;
-        [self.layer insertSublayer:subLayer atIndex:0];
-    }
+    [self decorationComponent];
 }
 
+- (void)decorationComponent {
+     if (_localizeText.length > 0) {
+            [self setTitle:NSLocalizedString(_localizeText, @"") forState:UIControlStateNormal];
+            [self setTitle:NSLocalizedString(_localizeText, @"") forState:UIControlStateHighlighted];
+            [self setTitle:NSLocalizedString(_localizeText, @"") forState:UIControlStateSelected];
+        }
+        else {
+            [self setTitle:@"" forState:UIControlStateNormal];
+            [self setTitle:@"" forState:UIControlStateHighlighted];
+            [self setTitle:@"" forState:UIControlStateSelected];
+        }
+        
+        if (_borderWidth > 0 && _borderColor != nil) {
+            self.layer.borderWidth = _borderWidth;
+            self.layer.borderColor = _borderColor.CGColor;
+        }
+
+        if (_cornerRadius > 0) {
+            self.clipsToBounds = YES;
+            self.layer.cornerRadius = _cornerRadius;
+        }
+        
+        if (_shadowColor != nil) {
+            self.layer.masksToBounds = NO;
+            
+            if (_subLayer) {
+                [_subLayer removeFromSuperlayer];
+            }
+            
+            if ([self.backgroundColor isEqual:[UIColor clearColor]] == NO) {
+                self.bgColor = self.backgroundColor;
+            }
+            self.layer.backgroundColor = [UIColor clearColor].CGColor;
+            self.backgroundColor = [UIColor clearColor];
+            
+            self.subLayer = [[CAShapeLayer alloc] init];
+            _subLayer.path = [[UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:_cornerRadius] CGPath];
+            _subLayer.fillColor = _bgColor.CGColor;
+            _subLayer.shadowOffset = _shadowOffset;
+            _subLayer.shadowColor = _shadowColor.CGColor;
+            _subLayer.shadowRadius = _shadowRadius;
+            _subLayer.shadowOpacity = _shadowOpacity;
+            
+            [self.layer insertSublayer:_subLayer atIndex:0];
+        }
+}
 - (void)setLocalizeText:(NSString *)localizeText {
     _localizeText = localizeText;
     [self setNeedsDisplay];

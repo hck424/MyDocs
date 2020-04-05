@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet CTextField *tfSearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnListType;
 @property (weak, nonatomic) IBOutlet UIButton *btnSort;
-@property (nonatomic, weak) id <SearchBarDelegate>delegate;
+@property (nonatomic, weak) IBOutlet id <SearchBarDelegate>delegate;
 @end
 
 NS_ASSUME_NONNULL_END

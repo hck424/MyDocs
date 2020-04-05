@@ -12,6 +12,13 @@
 @implementation SortPopupView
 - (void)awakeFromNib {
     [super awakeFromNib];
+
+}
+- (id)initWithCoder:(NSCoder *)coder {
+    if (self = [super initWithCoder:coder]) {
+     
+    }
+    return self;
 }
 
 - (IBAction)onClickedButtonAction:(CButton *)sender {
@@ -36,4 +43,5 @@
         self.onClickedTouchUpInside(sortType);
     }
 }
+
 @end

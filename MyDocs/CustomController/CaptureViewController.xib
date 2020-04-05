@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,9 @@
                 <outlet property="btnSound" destination="byu-MI-ih8" id="Am3-Au-MKY"/>
                 <outlet property="btnTimer" destination="v42-zi-zeY" id="wNC-k6-ytv"/>
                 <outlet property="captureView" destination="vyD-v5-pVk" id="vPF-yh-4qS"/>
+                <outlet property="cropControl" destination="Nm9-rC-v33" id="Hbz-E1-JCT"/>
                 <outlet property="ivPreView" destination="gvQ-ma-uHg" id="bGR-6H-PWg"/>
+                <outlet property="lbDownCount" destination="GAK-63-WqV" id="2Ly-b9-jUj"/>
                 <outlet property="preView" destination="I4v-HY-6rA" id="4r6-P5-TXx"/>
                 <outlet property="svControl" destination="k6p-1h-Kyi" id="cOc-f0-frb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,9 +35,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="2x6-Vj-HM7" appends="YES" id="hNk-JE-hBr"/>
-                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-rC-v33" customClass="CropControlView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4v-HY-6rA">
                     <rect key="frame" x="305" y="650" width="60" height="80"/>
@@ -69,6 +72,12 @@
                         <constraint firstAttribute="width" secondItem="I4v-HY-6rA" secondAttribute="height" multiplier="3:4" id="w2r-EO-9OK"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAK-63-WqV">
+                    <rect key="frame" x="171.33333333333334" y="381" width="32.333333333333343" height="60"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-1h-Kyi">
                     <rect key="frame" x="0.0" y="710" width="375" height="68"/>
                     <subviews>
@@ -111,7 +120,7 @@
                             <state key="normal" image="shot">
                                 <color key="titleColor" red="0.0" green="0.52156862749999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <state key="selected" image="pause_fill.png"/>
+                            <state key="selected" image="shot_pause"/>
                             <connections>
                                 <action selector="onClickedButtonActions:" destination="-1" eventType="touchUpInside" id="U3c-hl-FRb"/>
                             </connections>
@@ -155,11 +164,17 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="GAK-63-WqV" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="0rs-Pr-fY8"/>
+                <constraint firstItem="GAK-63-WqV" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="28A-5n-Bar"/>
                 <constraint firstAttribute="bottom" secondItem="vyD-v5-pVk" secondAttribute="bottom" id="4Wm-JN-iSr"/>
+                <constraint firstAttribute="trailing" secondItem="Nm9-rC-v33" secondAttribute="trailing" id="N5Z-jz-wya"/>
+                <constraint firstAttribute="bottom" secondItem="Nm9-rC-v33" secondAttribute="bottom" id="N8b-3i-cJv"/>
                 <constraint firstAttribute="trailing" secondItem="vyD-v5-pVk" secondAttribute="trailing" id="QGs-lN-dGz"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="I4v-HY-6rA" secondAttribute="trailing" constant="10" id="QmI-Oy-Zbg"/>
                 <constraint firstItem="k6p-1h-Kyi" firstAttribute="top" secondItem="I4v-HY-6rA" secondAttribute="bottom" constant="-20" id="b8i-OB-PV6"/>
+                <constraint firstItem="Nm9-rC-v33" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j13-tX-pZU"/>
                 <constraint firstAttribute="top" secondItem="vyD-v5-pVk" secondAttribute="top" id="m5J-pF-AYa"/>
+                <constraint firstItem="Nm9-rC-v33" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qug-0y-RaI"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="k6p-1h-Kyi" secondAttribute="trailing" id="uBh-gy-5nY"/>
                 <constraint firstItem="k6p-1h-Kyi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="v6V-wZ-C8x"/>
                 <constraint firstAttribute="leading" secondItem="vyD-v5-pVk" secondAttribute="leading" id="x3U-de-Tiy"/>
@@ -168,18 +183,13 @@
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="116" y="148"/>
         </view>
-        <tapGestureRecognizer id="2x6-Vj-HM7">
-            <connections>
-                <action selector="singleTapGesture:" destination="-1" id="89e-M7-L3E"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="exit" width="33.333332061767578" height="33.333332061767578"/>
         <image name="mute" width="33.333332061767578" height="33.333332061767578"/>
         <image name="one_page" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="pause_fill.png" width="128" height="128"/>
         <image name="shot" width="40" height="40"/>
+        <image name="shot_pause" width="40" height="40"/>
         <image name="sound_on" width="33.333332061767578" height="33.333332061767578"/>
         <image name="timer_0" width="33.333332061767578" height="33.333332061767578"/>
         <image name="two_page.png" width="128" height="128"/>

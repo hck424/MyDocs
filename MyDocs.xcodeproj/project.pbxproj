@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B9D66CDEAB9781AC23892EE6 /* Pods_MyDocs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */; };
+		E5F5D89F24399C3E0037DA0D /* CButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F5D89E24399C3E0037DA0D /* CButton.m */; };
+		E5F5D8A224399C910037DA0D /* CView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F5D8A124399C910037DA0D /* CView.m */; };
+		E5F5D8A52439B6830037DA0D /* CropControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F5D8A42439B6830037DA0D /* CropControlView.m */; };
+		E5F5D8A72439B68E0037DA0D /* CropControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5F5D8A62439B68E0037DA0D /* CropControlView.xib */; };
 		E94F7C11243435E900AD80F6 /* CLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F7C10243435E900AD80F6 /* CLabel.m */; };
 		E94F7C1424344F2600AD80F6 /* AudioListener.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F7C1324344F2600AD80F6 /* AudioListener.m */; };
 		E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C10BC242370F400817620 /* CustomNavigationController.m */; };
@@ -58,7 +62,6 @@
 		E9E5B6E5242C6D0E006EE173 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5B6E4242C6D0E006EE173 /* DBManager.m */; };
 		E9E5B6E8242C722E006EE173 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5B6E7242C722E006EE173 /* Item.m */; };
 		E9ED85BB2431ADBB00397C86 /* BGStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ED85BA2431ADBB00397C86 /* BGStackView.m */; };
-		E9ED85BE2431B82500397C86 /* CButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ED85BD2431B82500397C86 /* CButton.m */; };
 		E9ED85C12431BA7800397C86 /* SortPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ED85C02431BA7800397C86 /* SortPopupView.m */; };
 		E9ED85C32431BA8100397C86 /* SortPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9ED85C22431BA8100397C86 /* SortPopupView.xib */; };
 		E9F5ECF2242365590093B878 /* ToolBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5ECF1242365590093B878 /* ToolBarViewController.m */; };
@@ -73,6 +76,13 @@
 		1F06331DC39D7CE20940AC0F /* Pods-MyDocs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.debug.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.debug.xcconfig"; sourceTree = "<group>"; };
 		4F82F86D583B4EA1FA11AC8B /* Pods-MyDocs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDocs.release.xcconfig"; path = "Target Support Files/Pods-MyDocs/Pods-MyDocs.release.xcconfig"; sourceTree = "<group>"; };
 		8FB9A859D2D8B42C92E6CF25 /* Pods_MyDocs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDocs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5F5D89D24399C3E0037DA0D /* CButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
+		E5F5D89E24399C3E0037DA0D /* CButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CButton.m; sourceTree = "<group>"; };
+		E5F5D8A024399C910037DA0D /* CView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CView.h; sourceTree = "<group>"; };
+		E5F5D8A124399C910037DA0D /* CView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CView.m; sourceTree = "<group>"; };
+		E5F5D8A32439B6830037DA0D /* CropControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropControlView.h; sourceTree = "<group>"; };
+		E5F5D8A42439B6830037DA0D /* CropControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CropControlView.m; sourceTree = "<group>"; };
+		E5F5D8A62439B68E0037DA0D /* CropControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CropControlView.xib; sourceTree = "<group>"; };
 		E94F7C0F243435E900AD80F6 /* CLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLabel.h; sourceTree = "<group>"; };
 		E94F7C10243435E900AD80F6 /* CLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLabel.m; sourceTree = "<group>"; };
 		E94F7C1224344F2500AD80F6 /* AudioListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioListener.h; sourceTree = "<group>"; };
@@ -164,8 +174,6 @@
 		E9E5B6E7242C722E006EE173 /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		E9ED85B92431ADBB00397C86 /* BGStackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGStackView.h; sourceTree = "<group>"; };
 		E9ED85BA2431ADBB00397C86 /* BGStackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGStackView.m; sourceTree = "<group>"; };
-		E9ED85BC2431B82500397C86 /* CButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
-		E9ED85BD2431B82500397C86 /* CButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CButton.m; sourceTree = "<group>"; };
 		E9ED85BF2431BA7800397C86 /* SortPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SortPopupView.h; sourceTree = "<group>"; };
 		E9ED85C02431BA7800397C86 /* SortPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SortPopupView.m; sourceTree = "<group>"; };
 		E9ED85C22431BA8100397C86 /* SortPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPopupView.xib; sourceTree = "<group>"; };
@@ -224,6 +232,9 @@
 				E99C3E3A24331C3B00EBB488 /* CaptureViewController.h */,
 				E99C3E3B24331C3B00EBB488 /* CaptureViewController.m */,
 				E99C3E3C24331C3B00EBB488 /* CaptureViewController.xib */,
+				E5F5D8A32439B6830037DA0D /* CropControlView.h */,
+				E5F5D8A42439B6830037DA0D /* CropControlView.m */,
+				E5F5D8A62439B68E0037DA0D /* CropControlView.xib */,
 			);
 			path = CustomController;
 			sourceTree = "<group>";
@@ -400,6 +411,10 @@
 		E9D90BBD240E37A0006AAAF2 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				E5F5D8A024399C910037DA0D /* CView.h */,
+				E5F5D8A124399C910037DA0D /* CView.m */,
+				E5F5D89D24399C3E0037DA0D /* CButton.h */,
+				E5F5D89E24399C3E0037DA0D /* CButton.m */,
 				E94F7C0F243435E900AD80F6 /* CLabel.h */,
 				E94F7C10243435E900AD80F6 /* CLabel.m */,
 				E9BD1FB32422068800AC2A51 /* VerticalButton.h */,
@@ -415,8 +430,6 @@
 				E9FCF476240F3DFE00C0A385 /* CBarButtonItem.m */,
 				E9ED85B92431ADBB00397C86 /* BGStackView.h */,
 				E9ED85BA2431ADBB00397C86 /* BGStackView.m */,
-				E9ED85BC2431B82500397C86 /* CButton.h */,
-				E9ED85BD2431B82500397C86 /* CButton.m */,
 				E9ED85BF2431BA7800397C86 /* SortPopupView.h */,
 				E9ED85C02431BA7800397C86 /* SortPopupView.m */,
 				E9ED85C22431BA8100397C86 /* SortPopupView.xib */,
@@ -517,6 +530,7 @@
 				E96E454B242310350092256B /* Home.storyboard in Resources */,
 				E96E4563242348D80092256B /* FileCollectionCell.xib in Resources */,
 				E96E4553242310C80092256B /* GoogleDrive.storyboard in Resources */,
+				E5F5D8A72439B68E0037DA0D /* CropControlView.xib in Resources */,
 				E9D90B91240E307E006AAAF2 /* Localizable.strings in Resources */,
 				E9D90B7B240E2F77006AAAF2 /* Assets.xcassets in Resources */,
 				E96E454D2423106A0092256B /* iCloud.storyboard in Resources */,
@@ -580,16 +594,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F5D8A224399C910037DA0D /* CView.m in Sources */,
 				E9D90B76240E2F77006AAAF2 /* MainViewController.m in Sources */,
 				E9D90BD1240E3A6E006AAAF2 /* BaseViewController.m in Sources */,
 				E9ED85BB2431ADBB00397C86 /* BGStackView.m in Sources */,
 				E96E4558242314980092256B /* FileListController.m in Sources */,
+				E5F5D89F24399C3E0037DA0D /* CButton.m in Sources */,
 				E9FCF477240F3DFE00C0A385 /* CBarButtonItem.m in Sources */,
 				E9D90BC9240E39A9006AAAF2 /* UIViewController+Utility.m in Sources */,
 				E9E5B6E8242C722E006EE173 /* Item.m in Sources */,
 				E9D90BCF240E39E8006AAAF2 /* GoogleDriveViewController.m in Sources */,
 				E9D90BD7240E4B02006AAAF2 /* Utility.m in Sources */,
 				E99C3E332432F9F500EBB488 /* CameraViewController.m in Sources */,
+				E5F5D8A52439B6830037DA0D /* CropControlView.m in Sources */,
 				E9D90BC6240E388F006AAAF2 /* CTextField.m in Sources */,
 				E96E4547242300EC0092256B /* FileCell.m in Sources */,
 				E9D90BDA240E56B6006AAAF2 /* HitTestView.m in Sources */,
@@ -614,7 +631,6 @@
 				E99C3E3D24331C3B00EBB488 /* CaptureViewController.m in Sources */,
 				E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */,
 				E9D90B97240E3101006AAAF2 /* TutorialViewController.m in Sources */,
-				E9ED85BE2431B82500397C86 /* CButton.m in Sources */,
 				E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */,
 				E94F7C1424344F2600AD80F6 /* AudioListener.m in Sources */,
 				E9D90BCC240E39CB006AAAF2 /* LanguageInfo.m in Sources */,

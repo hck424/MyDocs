@@ -11,6 +11,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "AppDelegate.h"
 #import "AudioListener.h"
+#import "CropControlView.h"
 
 #define CAMERA_SHUTTER_SOUND    @"CameraShutter_Haptic"
 
@@ -26,6 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnTimer;
 @property (weak, nonatomic) IBOutlet UIButton *btnSound;
 @property (weak, nonatomic) IBOutlet UIView *captureView;
+@property (weak, nonatomic) IBOutlet UILabel *lbDownCount;
+@property (weak, nonatomic) IBOutlet CropControlView *cropControl;
+
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
@@ -34,8 +38,14 @@
 @property (nonatomic, assign) BOOL toolBarHidden;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) NSMutableArray *arrImg;
-
 @property (nonatomic, strong) MPVolumeView *volumeView;
+
+@property (nonatomic, assign) NSInteger second;
+@property (nonatomic, assign) NSInteger downCount;
+@property (nonatomic, strong) NSTimer *timerSecod;
+@property (nonatomic, strong) NSTimer *timerDownCount;
+
+
 @end
 
 @implementation CaptureViewController
@@ -63,8 +73,16 @@
     _volumeView.showsVolumeSlider = YES;
     
     [self.btnSound sendActionsForControlEvents:UIControlEventTouchUpInside];
+    _lbDownCount.hidden = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGesture:)];
+    [_cropControl addGestureRecognizer:tap];
     
 }
+- (void)prepareForInterfaceBuilder {
+    [super prepareForInterfaceBuilder];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_session startRunning];
@@ -119,8 +137,43 @@
             [_delegate captureControllerDidExit:self];
         }
     }
+    else if (sender == _btnTimer) {
+
+        self.second = _second + 1;
+        if (self.second % 6 == 0) {
+            self.second = 0;
+        }
+    }
     else if (sender == _btnShot) {
-        self.enableCapture = YES;
+        if (_second > 0) {
+            sender.selected = !sender.selected;
+            if (sender.selected) {
+                [self stopTimerSecond];
+                [self stopTimerDownCount];
+                
+                __weak typeof(self) weakSelf = self;
+                [self startAnimationDownCount];
+                self.timerDownCount = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+                    if (self.downCount < 0) {
+                        self.downCount = self.second;
+                    }
+                    [weakSelf startAnimationDownCount];
+                    self.downCount--;
+                }];
+                
+                self.timerSecod = [NSTimer scheduledTimerWithTimeInterval:_second + 1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+                    self.enableCapture = YES;
+                }];
+            }
+            else {
+                [self stopTimerSecond];
+                [self stopTimerDownCount];
+            }
+        }
+        else {
+            sender.selected = NO;
+            self.enableCapture = YES;
+        }
     }
     else if (sender == _btnPage) {
         sender.selected = !sender.selected;
@@ -144,6 +197,50 @@
         }
     }
 }
+
+- (void)setSecond:(NSInteger)second {
+    _second = second;
+    
+    [_btnTimer setImage:[UIImage imageNamed:[NSString stringWithFormat:@"timer_%ld", _second]] forState:UIControlStateNormal];
+    self.downCount = second;
+    _lbDownCount.text = [NSString stringWithFormat:@"%ld", _downCount];
+    if (_second == 0) {
+      _lbDownCount.hidden = YES;
+    }
+    else {
+      _lbDownCount.hidden = NO;
+    }
+    
+    [self stopTimerDownCount];
+    [self stopTimerSecond];
+    self.btnShot.selected = NO;
+    
+}
+- (void)startAnimationDownCount {
+    _lbDownCount.hidden = NO;
+    _lbDownCount.text = [NSString stringWithFormat:@"%ld", _downCount];
+    
+    [UIView animateWithDuration:0.8 animations:^{
+        self.lbDownCount.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.lbDownCount.transform = CGAffineTransformIdentity;
+        }];
+    }];
+}
+- (void)stopTimerSecond {
+    if (_timerSecod) {
+        [_timerSecod invalidate];
+        self.timerSecod = nil;
+    }
+}
+- (void)stopTimerDownCount {
+    if (_timerDownCount) {
+        [_timerDownCount invalidate];
+        self.timerDownCount = nil;
+    }
+}
+
 - (void)volumeChange:(CGFloat)volumeLevel {
     UISlider *volumeSliderView = nil;
     for (UIView *subView in [_volumeView subviews]) {

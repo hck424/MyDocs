@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchBar">
+            <connections>
+                <outlet property="btnListType" destination="vwH-60-ROy" id="IIm-EK-NkM"/>
+                <outlet property="btnSort" destination="g5E-Ba-Kin" id="frO-rj-Wvm"/>
+                <outlet property="tfSearch" destination="bB6-56-yUY" id="vux-Pq-39R"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="SearchBar">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,7 +31,7 @@
                                 <color key="titleColor" red="0.043137254899999998" green="0.066666666669999999" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="pu6-Du-9Km"/>
+                                <action selector="onClickedButtonAction:" destination="-1" eventType="touchUpInside" id="Yiw-RS-gbK"/>
                             </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bB6-56-yUY" customClass="CTextField">
@@ -69,7 +75,7 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="localizablePlaceHolder" value="검색할 파일명을 입력해주세요."/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="textFieldEdtingChanged:" destination="iN0-l3-epB" eventType="editingChanged" id="Idc-81-klc"/>
+                                <action selector="textFieldEdtingChanged:" destination="-1" eventType="editingChanged" id="Bru-4X-6z7"/>
                             </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-60-ROy">
@@ -82,7 +88,7 @@
                             </state>
                             <state key="selected" image="squared_menu"/>
                             <connections>
-                                <action selector="onClickedButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="spp-q4-9Ah"/>
+                                <action selector="onClickedButtonAction:" destination="-1" eventType="touchUpInside" id="8lu-aT-e09"/>
                             </connections>
                         </button>
                     </subviews>
@@ -96,11 +102,6 @@
                 <constraint firstAttribute="leading" secondItem="M7x-SQ-wbZ" secondAttribute="leading" id="zL5-C8-goq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="btnListType" destination="vwH-60-ROy" id="vbf-qN-XLV"/>
-                <outlet property="btnSort" destination="g5E-Ba-Kin" id="61r-QK-Ajz"/>
-                <outlet property="tfSearch" destination="bB6-56-yUY" id="Wb9-5W-Edj"/>
-            </connections>
             <point key="canvasLocation" x="-13.043478260869566" y="43.526785714285715"/>
         </view>
     </objects>

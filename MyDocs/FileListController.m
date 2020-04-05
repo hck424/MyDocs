@@ -19,13 +19,13 @@
 #import "CameraViewController.h"
 
 @interface FileListController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, SearchBarDelegate, UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIView *bgSearchView;
+
 @property (weak, nonatomic) IBOutlet UIView *bgListView;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) SortPopupView *sortView;
+@property (nonatomic, strong) IBOutlet SearchBar *searchBar;
 
-@property (nonatomic, strong) SearchBar *searchBar;
+@property (strong, nonatomic) SortPopupView *sortView;
 @property (nonatomic, strong) NSArray *arrData;
 @property (nonatomic, assign) FILE_SORT_TYPE sortType;
 @property (nonatomic, strong) NSMutableArray *arrSelectItem;
@@ -35,15 +35,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.searchBar = [[NSBundle mainBundle] loadNibNamed:@"SearchBar" owner:self options:nil].firstObject;
-    _searchBar.delegate = self;
-    [_bgSearchView addSubview:_searchBar];
-    _searchBar.translatesAutoresizingMaskIntoConstraints = NO;
-    [_searchBar.topAnchor constraintEqualToAnchor:_bgSearchView.topAnchor constant:0].active = YES;
-    [_searchBar.leadingAnchor constraintEqualToAnchor:_bgSearchView.leadingAnchor constant:0].active = YES;
-    [_searchBar.bottomAnchor constraintEqualToAnchor:_bgSearchView.bottomAnchor constant:0].active = YES;
-    [_searchBar.trailingAnchor constraintEqualToAnchor:_bgSearchView.trailingAnchor constant:0].active = YES;
     
     [_collectionView registerNib:[UINib nibWithNibName:@"FileCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"FileCollectionCell"];
     _tblView.rowHeight = UITableViewAutomaticDimension;
@@ -64,6 +55,9 @@
     } themeColor:COLOR_APP_DEFAULT refreshStyle:KafkaRefreshStyleReplicatorCircle];
 }
 
+- (void)prepareForInterfaceBuilder {
+    [super prepareForInterfaceBuilder];
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[AppDelegate instance].toolBarViewController addTouchUpInsideAction:self selector:@selector(onClickedToolBarActions:)];
@@ -92,10 +86,6 @@
     [_sortView.heightAnchor constraintEqualToConstant:190].active = YES;
     [_sortView.topAnchor constraintEqualToAnchor:_bgListView.topAnchor].active = YES;
     [_sortView.leadingAnchor constraintEqualToAnchor:_bgListView.leadingAnchor constant:10].active = YES;
-    
-    _sortView.layer.cornerRadius = 10.0f;
-    _sortView.layer.borderColor = RGB(28, 71, 178).CGColor;
-    _sortView.layer.borderWidth = 1.0f;
     _sortView.hidden = YES;
     
     __weak typeof(self)weakSelf = self;
