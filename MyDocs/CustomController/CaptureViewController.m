@@ -10,7 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "AppDelegate.h"
-#import "AudioListener.h"
 #import "CropControlView.h"
 
 #define CAMERA_SHUTTER_SOUND    @"CameraShutter_Haptic"
@@ -38,7 +37,6 @@
 @property (nonatomic, assign) BOOL toolBarHidden;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) NSMutableArray *arrImg;
-@property (nonatomic, strong) MPVolumeView *volumeView;
 
 @property (nonatomic, assign) NSInteger second;
 @property (nonatomic, assign) NSInteger downCount;
@@ -61,22 +59,18 @@
 
     NSURL *url = [self getSystemSoundUrlByPrefix:CAMERA_SHUTTER_SOUND];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [_audioPlayer setVolume:0.8];
-    [_audioPlayer setVolume:0.5];
+    [_audioPlayer setVolume:1.0];
     
     _ivPreView.layer.borderColor = RGB(0, 133, 255).CGColor;
     _ivPreView.layer.borderWidth = 1.0f;
     
-    self.volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, -100, self.view.frame.size.width - 40, 50)];
-    [self.view addSubview:_volumeView];
-    _volumeView.showsRouteButton = NO;
-    _volumeView.showsVolumeSlider = YES;
     
     [self.btnSound sendActionsForControlEvents:UIControlEventTouchUpInside];
     _lbDownCount.hidden = YES;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGesture:)];
     [_cropControl addGestureRecognizer:tap];
+    _cropControl.isOnePage = YES;
     
 }
 - (void)prepareForInterfaceBuilder {
@@ -86,25 +80,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_session startRunning];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:NOTI_SYSTEM_VOLUME_CHANGE object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:UIDeviceOrientationDidChangeNotification object:nil];
 
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.view layoutIfNeeded];
-    
+     
     [self updateImageCount];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [_session stopRunning];
+
     [AppDelegate instance].restrictRotation = NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
     [self shouldAutorotate];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTI_SYSTEM_VOLUME_CHANGE object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (BOOL)shouldAutorotate {
@@ -180,21 +173,21 @@
         [AppDelegate instance].restrictRotation = sender.selected;
         
         if (sender.selected) {
+            _cropControl.isOnePage = NO;
             [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
             [self shouldAutorotate];
         }
         else {
+            _cropControl.isOnePage = YES;
             [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
             [self shouldAutorotate];
         }
+        [self setAvCaptureOrientation];
+        [_cropControl resetPoint];
     }
     else if (sender == _btnSound) {
         sender.selected = !sender.selected;
-        if (sender.selected) {
-            [self volumeChange:0.5];
-        } else {
-            [self volumeChange:0.0];
-        }
+        
     }
 }
 
@@ -241,28 +234,8 @@
     }
 }
 
-- (void)volumeChange:(CGFloat)volumeLevel {
-    UISlider *volumeSliderView = nil;
-    for (UIView *subView in [_volumeView subviews]) {
-        if ([subView isKindOfClass:[UISlider class]]) {
-            volumeSliderView = (UISlider *)subView;
-            break;
-        }
-    }
-    [volumeSliderView setValue:volumeLevel];
-}
 - (void)notificationHandler:(NSNotification *)notification {
-    if ([notification.name isEqualToString:NOTI_SYSTEM_VOLUME_CHANGE]) {
-        NSNumber *volumeLevel = (NSNumber *)[notification object];
-        CGFloat outputVolume = [volumeLevel floatValue];
-        if (outputVolume <= 0.0) {
-            _btnSound.selected = NO;
-        }
-        else {
-            _btnSound.selected = YES;
-        }
-    }
-    else if ([notification.name isEqualToString:UIDeviceOrientationDidChangeNotification]) {
+    if ([notification.name isEqualToString:UIDeviceOrientationDidChangeNotification]) {
         NSLog(@"device orientation");
         [self setAvCaptureOrientation];
     }
@@ -320,36 +293,23 @@
 }
 
 - (void)setAvCaptureOrientation {
-    AVCaptureVideoOrientation newOrientation;
-    
-    if (self.btnPage.selected) {
-        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-        switch (orientation) {
-            case UIDeviceOrientationPortrait:
-                newOrientation = AVCaptureVideoOrientationPortrait;
-                break;
-            case UIDeviceOrientationLandscapeRight:
-                newOrientation = AVCaptureVideoOrientationLandscapeLeft;
-                break;
-            case UIDeviceOrientationLandscapeLeft:
-                newOrientation = AVCaptureVideoOrientationLandscapeRight;
-                break;
-            case UIDeviceOrientationPortraitUpsideDown:
-                newOrientation = AVCaptureVideoOrientationPortrait;
-                break;
-            default:
-                newOrientation = AVCaptureVideoOrientationPortrait;
-                break;
-        }
-        
-        if ([self.previewLayer respondsToSelector:@selector(connection)]
-            && [self.previewLayer.connection isVideoOrientationSupported]) {
-            self.previewLayer.connection.videoOrientation = newOrientation;
-            
-        }
+    AVCaptureVideoOrientation newOrientation = AVCaptureVideoOrientationPortrait;
+    if ([AppDelegate instance].restrictRotation) {
+        newOrientation = AVCaptureVideoOrientationLandscapeRight;
     }
     
+    if ([self.previewLayer respondsToSelector:@selector(connection)]
+        && [self.previewLayer.connection isVideoOrientationSupported]) {
+        self.previewLayer.connection.videoOrientation = newOrientation;
+    }
     self.previewLayer.frame = _captureView.bounds;
+}
+- (UIImageOrientation)getImageOrinentation {
+    UIImageOrientation newImgOrinentation = UIImageOrientationRight;
+    if ([AppDelegate instance].restrictRotation) {
+        newImgOrinentation = UIImageOrientationUp;
+    }
+    return newImgOrinentation;
 }
 #pragma mark AVCaptureSession delegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput
@@ -382,7 +342,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         
         /*We display the result on the image view (We need to change the orientation of the image so that the video is displayed correctly).
          Same thing as for the CALayer we are not in the main thread so ...*/
-        self.originImg = [UIImage imageWithCGImage:newImage scale:1.0 orientation:UIImageOrientationRight];
+        self.originImg = [UIImage imageWithCGImage:newImage scale:1.0 orientation:[self getImageOrinentation]];
         /*We relase the CGImageRef*/
         CGImageRelease(newImage);
         NSLog(@"caputure image size : %@", NSStringFromCGSize(self.originImg.size));

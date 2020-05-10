@@ -13,7 +13,6 @@
 		E5F5D8A52439B6830037DA0D /* CropControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F5D8A42439B6830037DA0D /* CropControlView.m */; };
 		E5F5D8A72439B68E0037DA0D /* CropControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5F5D8A62439B68E0037DA0D /* CropControlView.xib */; };
 		E94F7C11243435E900AD80F6 /* CLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F7C10243435E900AD80F6 /* CLabel.m */; };
-		E94F7C1424344F2600AD80F6 /* AudioListener.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F7C1324344F2600AD80F6 /* AudioListener.m */; };
 		E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C10BC242370F400817620 /* CustomNavigationController.m */; };
 		E96E4547242300EC0092256B /* FileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E4545242300EC0092256B /* FileCell.m */; };
 		E96E4548242300EC0092256B /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E4546242300EC0092256B /* FileCell.xib */; };
@@ -85,8 +84,6 @@
 		E5F5D8A62439B68E0037DA0D /* CropControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CropControlView.xib; sourceTree = "<group>"; };
 		E94F7C0F243435E900AD80F6 /* CLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLabel.h; sourceTree = "<group>"; };
 		E94F7C10243435E900AD80F6 /* CLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLabel.m; sourceTree = "<group>"; };
-		E94F7C1224344F2500AD80F6 /* AudioListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioListener.h; sourceTree = "<group>"; };
-		E94F7C1324344F2600AD80F6 /* AudioListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioListener.m; sourceTree = "<group>"; };
 		E96C10BB242370F400817620 /* CustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
 		E96C10BC242370F400817620 /* CustomNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		E96E4544242300EC0092256B /* FileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileCell.h; sourceTree = "<group>"; };
@@ -396,8 +393,6 @@
 		E9D90BB8240E3719006AAAF2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				E94F7C1224344F2500AD80F6 /* AudioListener.h */,
-				E94F7C1324344F2600AD80F6 /* AudioListener.m */,
 				E9F5ECF0242365590093B878 /* ToolBarViewController.h */,
 				E9F5ECF1242365590093B878 /* ToolBarViewController.m */,
 				E9D90BBC240E3719006AAAF2 /* LanguageInfo.h */,
@@ -632,7 +627,6 @@
 				E9FCF46F240F362A00C0A385 /* UIView+Utility.m in Sources */,
 				E9D90B97240E3101006AAAF2 /* TutorialViewController.m in Sources */,
 				E96C10BD242370F400817620 /* CustomNavigationController.m in Sources */,
-				E94F7C1424344F2600AD80F6 /* AudioListener.m in Sources */,
 				E9D90BCC240E39CB006AAAF2 /* LanguageInfo.m in Sources */,
 				E96E4562242348D80092256B /* FileCollectionCell.m in Sources */,
 				E9D90BC8240E399B006AAAF2 /* NSBundle+Language.m in Sources */,

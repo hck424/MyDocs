@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol CropControlViewDelegate;
 
 @interface CropControlView : UIView
-
+@property (nonatomic, weak) id <CropControlViewDelegate>delegate;
+@property (nonatomic, assign) BOOL isOnePage;
+- (void)resetPoint;
 @end
 
+@protocol CropControlViewDelegate <NSObject>
+- (void)cropControl:(CropControlView *)cropControlView arrPoint:(NSArray *)arrPoint arrPoint2:(NSArray *)arrPoint2;
+@end
 NS_ASSUME_NONNULL_END

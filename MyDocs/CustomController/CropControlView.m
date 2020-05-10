@@ -12,11 +12,16 @@
 #define WIDTH_BTN 40
 #define DEFAULT_COLOR_BLUE RGB (0, 23, 255)
 
+#define MIN_WIDTH_MIDDLE 15
+#define MAX_WIDTH_MIDDLE 80
+
 @interface CropControlView ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *arrBtn;
+@property (weak, nonatomic) IBOutlet UIButton *btnMiddle;
 
 @property (nonatomic, strong) NSMutableArray *arrPoint;
 @property (nonatomic, strong) NSMutableArray *arrOriginPoint;
+@property (nonatomic, strong) NSMutableArray *arrMiddlePoint;
 
 @end
 @implementation CropControlView
@@ -47,10 +52,16 @@
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
         [btn addGestureRecognizer:pan];
     }
+    _btnMiddle.layer.borderColor = DEFAULT_COLOR_BLUE.CGColor;
+    _btnMiddle.layer.borderWidth = 1.0;
+}
+- (void)setIsOnePage:(BOOL)isOnePage {
+    _isOnePage = isOnePage;
     [self resetPoint];
 }
 
 - (void)resetPoint {
+    
     UIEdgeInsets safeEdge = [[AppDelegate instance].window safeAreaInsets];
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
@@ -59,33 +70,67 @@
     self.arrOriginPoint = [NSMutableArray array];
     self.arrPoint = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < _arrBtn.count; i++) {
-        UIButton *btn = [_arrBtn objectAtIndex:i];
-        
-        if (i == 0 || i == 3) {
+    for (NSInteger i = 0; i < 8; i++) {
+        if (i == 0 || i == 6 || i == 7) {
             posX = safeEdge.left + WIDTH_BTN/2;
+        }
+        else if (i == 1 || i == 5) {
+            posX = width/2;
         }
         else {
             posX = width - WIDTH_BTN/2 - safeEdge.right;
         }
         
-        if (i == 0 || i == 1) {
+        if (i == 0 || i == 1 || i == 2) {
             posY = safeEdge.top + WIDTH_BTN/2;
+        }
+        else if (i == 3 || i == 7) {
+            posY = height / 2;
         }
         else {
             posY =  height -  WIDTH_BTN/2 - safeEdge.bottom;
         }
         
-        CGPoint point  = CGPointMake(posX, posY);
-        btn.center = point;
-        
-        [btn.widthAnchor constraintEqualToConstant:WIDTH_BTN].active = YES;
-        [btn.heightAnchor constraintEqualToConstant:WIDTH_BTN].active = YES;
-        
+        CGPoint point = CGPointMake(posX, posY);
         [self.arrOriginPoint addObject:[NSValue valueWithCGPoint:point]];
     }
     
     [self.arrPoint setArray:_arrOriginPoint];
+    
+    
+    for (NSInteger i = 0; i < _arrPoint.count; i++) {
+        CGPoint point  = [[_arrPoint objectAtIndex:i] CGPointValue];
+        UIButton *btn = [_arrBtn objectAtIndex:i];
+        btn.frame = CGRectMake(0, 0, WIDTH_BTN, WIDTH_BTN);
+        btn.center = point;
+        
+        if (_isOnePage) {
+            if (i % 2 == 0) {
+                btn.hidden = NO;
+            }
+            else {
+                btn.hidden = YES;
+            }
+        }
+        else {
+            if (i % 2 == 0) {
+                btn.hidden = YES;
+            }
+            else {
+                btn.hidden = NO;
+            }
+        }
+    }
+    _btnMiddle.hidden = YES;
+    if (_isOnePage == NO) {
+        _btnMiddle.hidden = NO;
+        CGPoint p1 = [[_arrPoint objectAtIndex:1] CGPointValue];
+        CGPoint p5 = [[_arrPoint objectAtIndex:5] CGPointValue];
+        
+        CGFloat h = p5.y - p1.y;
+        _btnMiddle.frame = CGRectMake(p1.x - MIN_WIDTH_MIDDLE/2, p1.y, MIN_WIDTH_MIDDLE, h);
+    }
+    
     [self setNeedsDisplay];
 }
 
@@ -101,13 +146,16 @@
     
     for (NSInteger i = 0; i < _arrPoint.count; i++) {
         CGPoint point = [[_arrPoint objectAtIndex:i] CGPointValue];
-        if (i == 0) {
-            CGPathMoveToPoint(path, NULL, point.x, point.y);
-        }
-        else {
-            CGPathAddLineToPoint(path, NULL, point.x, point.y);
+        if (i % 2 == 0) {
+            if (i == 0) {
+                CGPathMoveToPoint(path, NULL, point.x, point.y);
+            }
+            else {
+                CGPathAddLineToPoint(path, NULL, point.x, point.y);
+            }
         }
     }
+    
     CGPoint point = [[_arrPoint firstObject] CGPointValue];
     CGPathAddLineToPoint(path, NULL, point.x, point.y);
     
@@ -123,7 +171,6 @@
     CGContextSetLineWidth(ctxt, 2.0);
     CGContextDrawPath(ctxt, kCGPathEOFillStroke);
 }
-
 
 - (void)panGesture:(UIPanGestureRecognizer *)gesture {
     
@@ -143,10 +190,12 @@
         [self setNeedsDisplay];
     }
     else if (gesture.state == UIGestureRecognizerStateEnded) {
-        
+        if ([self.delegate respondsToSelector:@selector(cropControl:arrPoint:arrPoint2:)]) {
+            [_delegate cropControl:self arrPoint:_arrPoint arrPoint2:_arrPoint];
+        }
     }
-    
 }
+
 - (CGPoint)bounderayCheckPoint:(CGPoint)point {
     CGPoint newPoint = point;
     UIEdgeInsets safeEdge = [[AppDelegate instance].window safeAreaInsets];

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "KafkaRefresh.h"
 #import "LanguageInfo.h"
-#import "AudioListener.h"
+
 
 @interface AppDelegate ()
 
@@ -49,8 +49,6 @@
             [[AppDelegate instance] callMainViewController];
         }
     }
-    
-    [AudioListener sharedInstance];
     return YES;
 }
 
@@ -72,14 +70,13 @@
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     
 //    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    
     if (_restrictRotation) {
         return UIInterfaceOrientationMaskLandscape;
     }
     else {
         return UIInterfaceOrientationMaskPortrait;
     }
-    
+//    return orientation;
 }
 #pragma mark - UISceneSession lifecycle
 
